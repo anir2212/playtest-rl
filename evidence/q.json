@@ -1,0 +1,350 @@
+{
+  "rows": [
+    {
+      "reward": "sparse",
+      "seed": 0,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "sparse",
+      "seed": 1,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "sparse",
+      "seed": 2,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "sparse",
+      "seed": 3,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "sparse",
+      "seed": 4,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "shaped",
+      "seed": 0,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "shaped",
+      "seed": 1,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "shaped",
+      "seed": 2,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "shaped",
+      "seed": 3,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "shaped",
+      "seed": 4,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "curiosity",
+      "seed": 0,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "curiosity",
+      "seed": 1,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "curiosity",
+      "seed": 2,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "curiosity",
+      "seed": 3,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "curiosity",
+      "seed": 4,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "hackable",
+      "seed": 0,
+      "train_last100_success": 0.0,
+      "success_rate": 0.0,
+      "mean_steps": 108.0,
+      "visited_states": 7
+    },
+    {
+      "reward": "hackable",
+      "seed": 1,
+      "train_last100_success": 0.01,
+      "success_rate": 0.0,
+      "mean_steps": 108.0,
+      "visited_states": 6
+    },
+    {
+      "reward": "hackable",
+      "seed": 2,
+      "train_last100_success": 0.01,
+      "success_rate": 0.0,
+      "mean_steps": 108.0,
+      "visited_states": 6
+    },
+    {
+      "reward": "hackable",
+      "seed": 3,
+      "train_last100_success": 0.01,
+      "success_rate": 0.0,
+      "mean_steps": 108.0,
+      "visited_states": 2
+    },
+    {
+      "reward": "hackable",
+      "seed": 4,
+      "train_last100_success": 0.09,
+      "success_rate": 0.0,
+      "mean_steps": 108.0,
+      "visited_states": 7
+    },
+    {
+      "reward": "fixed",
+      "seed": 0,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "fixed",
+      "seed": 1,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "fixed",
+      "seed": 2,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "fixed",
+      "seed": 3,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    },
+    {
+      "reward": "fixed",
+      "seed": 4,
+      "train_last100_success": 1.0,
+      "success_rate": 1.0,
+      "mean_steps": 10.0,
+      "visited_states": 10
+    }
+  ],
+  "sweep": [
+    {
+      "alpha": 0.1,
+      "gamma": 0.9,
+      "success": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "seed_values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "alpha": 0.1,
+      "gamma": 0.99,
+      "success": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "seed_values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "alpha": 0.25,
+      "gamma": 0.9,
+      "success": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "seed_values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "alpha": 0.25,
+      "gamma": 0.99,
+      "success": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "seed_values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "sparse": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "seed_values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "shaped": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "seed_values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "curiosity": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "seed_values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "hackable": {
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "seed_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "fixed": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "seed_values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  }
+}
