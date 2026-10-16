@@ -1,0 +1,4941 @@
+{
+  "rows": [
+    {
+      "bug": "wall_gap",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 17,
+      "detected": "wall_gap",
+      "position_coverage": 0.2777777777777778,
+      "position_visits": [
+        [
+          1,
+          2,
+          5,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 121,
+      "detected": "wall_gap",
+      "position_coverage": 0.6111111111111112,
+      "position_visits": [
+        [
+          7,
+          3,
+          1,
+          8,
+          5,
+          7
+        ],
+        [
+          7,
+          0,
+          0,
+          1,
+          4,
+          6
+        ],
+        [
+          1,
+          0,
+          0,
+          2,
+          5,
+          7
+        ],
+        [
+          0,
+          0,
+          0,
+          5,
+          12,
+          10
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          9,
+          11
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          9
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 76,
+      "detected": "wall_gap",
+      "position_coverage": 0.5,
+      "position_visits": [
+        [
+          8,
+          2,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          1,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          7,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          3,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          5,
+          7,
+          9,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 3,
+      "detected": "wall_gap",
+      "position_coverage": 0.1111111111111111,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 29,
+      "detected": "wall_gap",
+      "position_coverage": 0.2777777777777778,
+      "position_visits": [
+        [
+          2,
+          1,
+          6,
+          1,
+          0,
+          0
+        ],
+        [
+          8,
+          1,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 75,
+      "detected": "wall_gap",
+      "position_coverage": 0.9166666666666666,
+      "position_visits": [
+        [
+          1,
+          1,
+          2,
+          3,
+          3,
+          3
+        ],
+        [
+          2,
+          1,
+          2,
+          2,
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          0,
+          3,
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          3,
+          2,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          3,
+          3,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 77,
+      "detected": "wall_gap",
+      "position_coverage": 0.9444444444444444,
+      "position_visits": [
+        [
+          2,
+          2,
+          2,
+          2,
+          3,
+          3
+        ],
+        [
+          1,
+          2,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3,
+          0,
+          2,
+          2,
+          1
+        ],
+        [
+          3,
+          3,
+          0,
+          2,
+          1,
+          2
+        ],
+        [
+          3,
+          2,
+          4,
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          2,
+          3,
+          3,
+          0,
+          4
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 38,
+      "detected": "wall_gap",
+      "position_coverage": 0.7222222222222222,
+      "position_visits": [
+        [
+          3,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          2,
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          2,
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 77,
+      "detected": "wall_gap",
+      "position_coverage": 0.9722222222222222,
+      "position_visits": [
+        [
+          3,
+          3,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          2,
+          2,
+          2,
+          2,
+          5
+        ],
+        [
+          1,
+          2,
+          0,
+          3,
+          2,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          2,
+          3,
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 94,
+      "detected": "wall_gap",
+      "position_coverage": 0.9722222222222222,
+      "position_visits": [
+        [
+          1,
+          2,
+          3,
+          4,
+          4,
+          3
+        ],
+        [
+          1,
+          1,
+          2,
+          3,
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          0,
+          4,
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          0,
+          4,
+          2,
+          3
+        ],
+        [
+          3,
+          3,
+          4,
+          3,
+          3,
+          2
+        ],
+        [
+          3,
+          3,
+          3,
+          2,
+          2,
+          4
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 809,
+      "detected": "wall_gap",
+      "position_coverage": 0.4722222222222222,
+      "position_visits": [
+        [
+          160,
+          134,
+          70,
+          54,
+          77,
+          10
+        ],
+        [
+          163,
+          17,
+          3,
+          8,
+          72,
+          1
+        ],
+        [
+          31,
+          3,
+          0,
+          0,
+          5,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 1136,
+      "detected": "wall_gap",
+      "position_coverage": 0.3888888888888889,
+      "position_visits": [
+        [
+          320,
+          158,
+          132,
+          99,
+          6,
+          3
+        ],
+        [
+          256,
+          96,
+          45,
+          1,
+          0,
+          0
+        ],
+        [
+          16,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4444444444444444,
+      "position_visits": [
+        [
+          185,
+          271,
+          278,
+          178,
+          26,
+          14
+        ],
+        [
+          13,
+          94,
+          39,
+          80,
+          6,
+          1
+        ],
+        [
+          2,
+          7,
+          0,
+          6,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5,
+      "position_visits": [
+        [
+          185,
+          243,
+          204,
+          154,
+          161,
+          46
+        ],
+        [
+          7,
+          19,
+          19,
+          17,
+          68,
+          47
+        ],
+        [
+          0,
+          5,
+          0,
+          1,
+          6,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4166666666666667,
+      "position_visits": [
+        [
+          141,
+          370,
+          136,
+          232,
+          71,
+          5
+        ],
+        [
+          31,
+          112,
+          49,
+          34,
+          5,
+          0
+        ],
+        [
+          5,
+          6,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 6,
+      "detected": "score_overflow",
+      "position_coverage": 0.1111111111111111,
+      "position_visits": [
+        [
+          1,
+          2,
+          3,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 7,
+      "detected": "score_overflow",
+      "position_coverage": 0.1388888888888889,
+      "position_visits": [
+        [
+          4,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 138,
+      "detected": "score_overflow",
+      "position_coverage": 0.6111111111111112,
+      "position_visits": [
+        [
+          20,
+          10,
+          4,
+          1,
+          0,
+          0
+        ],
+        [
+          13,
+          5,
+          8,
+          3,
+          3,
+          0
+        ],
+        [
+          12,
+          8,
+          0,
+          4,
+          2,
+          0
+        ],
+        [
+          7,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          7,
+          3,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          5,
+          7,
+          9,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 70,
+      "detected": "score_overflow",
+      "position_coverage": 0.4722222222222222,
+      "position_visits": [
+        [
+          1,
+          2,
+          4,
+          1,
+          0,
+          0
+        ],
+        [
+          3,
+          5,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          7,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          10,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          8,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          2,
+          3,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 10,
+      "detected": "score_overflow",
+      "position_coverage": 0.16666666666666666,
+      "position_visits": [
+        [
+          2,
+          1,
+          4,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 4,
+      "detected": "score_overflow",
+      "position_coverage": 0.1111111111111111,
+      "position_visits": [
+        [
+          1,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 49,
+      "detected": "score_overflow",
+      "position_coverage": 0.75,
+      "position_visits": [
+        [
+          2,
+          0,
+          0,
+          1,
+          3,
+          3
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          3,
+          4
+        ],
+        [
+          0,
+          0,
+          1,
+          3,
+          0,
+          4
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 67,
+      "detected": "score_overflow",
+      "position_coverage": 0.8888888888888888,
+      "position_visits": [
+        [
+          3,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          1,
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          0,
+          3,
+          1,
+          0
+        ],
+        [
+          3,
+          3,
+          4,
+          3,
+          1,
+          0
+        ],
+        [
+          2,
+          2,
+          3,
+          5,
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 50,
+      "detected": "score_overflow",
+      "position_coverage": 0.8333333333333334,
+      "position_visits": [
+        [
+          3,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          2,
+          2,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          2,
+          1,
+          2
+        ],
+        [
+          3,
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          2,
+          3,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 13,
+      "detected": "score_overflow",
+      "position_coverage": 0.3333333333333333,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 155,
+      "detected": "score_overflow",
+      "position_coverage": 0.2222222222222222,
+      "position_visits": [
+        [
+          55,
+          41,
+          25,
+          1,
+          0,
+          0
+        ],
+        [
+          29,
+          3,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 716,
+      "detected": "score_overflow",
+      "position_coverage": 0.2222222222222222,
+      "position_visits": [
+        [
+          309,
+          107,
+          74,
+          1,
+          0,
+          0
+        ],
+        [
+          161,
+          22,
+          38,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 177,
+      "detected": "score_overflow",
+      "position_coverage": 0.19444444444444445,
+      "position_visits": [
+        [
+          55,
+          83,
+          30,
+          1,
+          0,
+          0
+        ],
+        [
+          3,
+          5,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": 384,
+      "detected": "score_overflow",
+      "position_coverage": 0.2222222222222222,
+      "position_visits": [
+        [
+          154,
+          156,
+          58,
+          1,
+          0,
+          0
+        ],
+        [
+          4,
+          7,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 51,
+      "detected": "score_overflow",
+      "position_coverage": 0.1111111111111111,
+      "position_visits": [
+        [
+          6,
+          38,
+          7,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.4166666666666667,
+      "position_visits": [
+        [
+          5,
+          11,
+          9,
+          3,
+          0,
+          0
+        ],
+        [
+          3,
+          8,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          10,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          12,
+          11,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.5277777777777778,
+      "position_visits": [
+        [
+          4,
+          1,
+          1,
+          8,
+          5,
+          7
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          4,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          5,
+          7
+        ],
+        [
+          0,
+          0,
+          0,
+          6,
+          14,
+          12
+        ],
+        [
+          0,
+          0,
+          0,
+          3,
+          12,
+          10
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.4722222222222222,
+      "position_visits": [
+        [
+          17,
+          2,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          13,
+          4,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          12,
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          7,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          7,
+          3,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          5,
+          7,
+          9,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.4722222222222222,
+      "position_visits": [
+        [
+          7,
+          5,
+          5,
+          1,
+          0,
+          0
+        ],
+        [
+          13,
+          11,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          13,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          10,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          8,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          2,
+          3,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.5277777777777778,
+      "position_visits": [
+        [
+          2,
+          1,
+          6,
+          1,
+          0,
+          0
+        ],
+        [
+          13,
+          2,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          14,
+          7,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          6,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          9,
+          3,
+          1,
+          0,
+          0
+        ],
+        [
+          7,
+          6,
+          2,
+          2,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.2777777777777778,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          100,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.2777777777777778,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          100,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.2777777777777778,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          100,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.2777777777777778,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          100,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.2777777777777778,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          100,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.9166666666666666,
+      "position_visits": [
+        [
+          4,
+          4,
+          2,
+          3,
+          3,
+          3
+        ],
+        [
+          4,
+          3,
+          4,
+          3,
+          4,
+          4
+        ],
+        [
+          3,
+          3,
+          0,
+          3,
+          4,
+          3
+        ],
+        [
+          2,
+          4,
+          0,
+          3,
+          3,
+          4
+        ],
+        [
+          3,
+          3,
+          3,
+          3,
+          4,
+          4
+        ],
+        [
+          3,
+          2,
+          3,
+          5,
+          3,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.8888888888888888,
+      "position_visits": [
+        [
+          2,
+          4,
+          4,
+          4,
+          5,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          4,
+          5
+        ],
+        [
+          3,
+          3,
+          0,
+          4,
+          4,
+          3
+        ],
+        [
+          3,
+          3,
+          0,
+          4,
+          3,
+          4
+        ],
+        [
+          4,
+          3,
+          4,
+          3,
+          3,
+          4
+        ],
+        [
+          3,
+          3,
+          3,
+          3,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.9166666666666666,
+      "position_visits": [
+        [
+          2,
+          4,
+          4,
+          3,
+          4,
+          5
+        ],
+        [
+          3,
+          3,
+          3,
+          3,
+          4,
+          3
+        ],
+        [
+          3,
+          2,
+          0,
+          4,
+          3,
+          3
+        ],
+        [
+          3,
+          3,
+          0,
+          3,
+          4,
+          3
+        ],
+        [
+          3,
+          3,
+          4,
+          3,
+          4,
+          6
+        ],
+        [
+          2,
+          2,
+          3,
+          4,
+          3,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.9166666666666666,
+      "position_visits": [
+        [
+          3,
+          1,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          2,
+          4,
+          3,
+          3,
+          5
+        ],
+        [
+          4,
+          3,
+          0,
+          4,
+          4,
+          3
+        ],
+        [
+          5,
+          3,
+          0,
+          5,
+          4,
+          4
+        ],
+        [
+          5,
+          3,
+          4,
+          3,
+          4,
+          4
+        ],
+        [
+          3,
+          2,
+          2,
+          3,
+          3,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.9166666666666666,
+      "position_visits": [
+        [
+          4,
+          4,
+          3,
+          4,
+          4,
+          3
+        ],
+        [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          0,
+          4,
+          3,
+          3
+        ],
+        [
+          3,
+          3,
+          0,
+          4,
+          3,
+          3
+        ],
+        [
+          3,
+          2,
+          3,
+          3,
+          4,
+          5
+        ],
+        [
+          3,
+          3,
+          3,
+          3,
+          4,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.19444444444444445,
+      "position_visits": [
+        [
+          43,
+          24,
+          13,
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.1111111111111111,
+      "position_visits": [
+        [
+          68,
+          37,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.1388888888888889,
+      "position_visits": [
+        [
+          48,
+          37,
+          19,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.1111111111111111,
+      "position_visits": [
+        [
+          59,
+          44,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 108,
+      "detected": "unreachable_checkpoint",
+      "position_coverage": 0.19444444444444445,
+      "position_visits": [
+        [
+          6,
+          38,
+          10,
+          41,
+          11,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 211,
+      "detected": "softlock",
+      "position_coverage": 0.8333333333333334,
+      "position_visits": [
+        [
+          14,
+          24,
+          20,
+          5,
+          2,
+          0
+        ],
+        [
+          7,
+          17,
+          10,
+          1,
+          2,
+          5
+        ],
+        [
+          12,
+          12,
+          0,
+          1,
+          2,
+          4
+        ],
+        [
+          13,
+          12,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          13,
+          11,
+          6,
+          1,
+          2,
+          5
+        ],
+        [
+          4,
+          1,
+          1,
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 9,
+      "detected": "softlock",
+      "position_coverage": 0.16666666666666666,
+      "position_visits": [
+        [
+          4,
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 190,
+      "detected": "softlock",
+      "position_coverage": 0.8611111111111112,
+      "position_visits": [
+        [
+          20,
+          10,
+          4,
+          1,
+          2,
+          2
+        ],
+        [
+          13,
+          5,
+          8,
+          4,
+          5,
+          12
+        ],
+        [
+          12,
+          8,
+          0,
+          8,
+          6,
+          8
+        ],
+        [
+          7,
+          3,
+          0,
+          5,
+          5,
+          5
+        ],
+        [
+          7,
+          3,
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          4,
+          5,
+          7,
+          9,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 267,
+      "detected": "softlock",
+      "position_coverage": 0.6388888888888888,
+      "position_visits": [
+        [
+          29,
+          29,
+          18,
+          4,
+          2,
+          0
+        ],
+        [
+          26,
+          25,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          19,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          13,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          14,
+          11,
+          6,
+          2,
+          1,
+          1
+        ],
+        [
+          14,
+          6,
+          4,
+          2,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 231,
+      "detected": "softlock",
+      "position_coverage": 0.8055555555555556,
+      "position_visits": [
+        [
+          10,
+          4,
+          15,
+          2,
+          2,
+          0
+        ],
+        [
+          18,
+          10,
+          14,
+          3,
+          1,
+          0
+        ],
+        [
+          20,
+          22,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          18,
+          13,
+          0,
+          2,
+          2,
+          6
+        ],
+        [
+          11,
+          14,
+          10,
+          3,
+          0,
+          3
+        ],
+        [
+          7,
+          7,
+          5,
+          5,
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 6,
+      "detected": "softlock",
+      "position_coverage": 0.1388888888888889,
+      "position_visits": [
+        [
+          1,
+          1,
+          2,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 44,
+      "detected": "softlock",
+      "position_coverage": 0.6944444444444444,
+      "position_visits": [
+        [
+          2,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          3,
+          4
+        ],
+        [
+          0,
+          0,
+          1,
+          3,
+          0,
+          4
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 65,
+      "detected": "softlock",
+      "position_coverage": 0.8333333333333334,
+      "position_visits": [
+        [
+          3,
+          1,
+          1,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          3,
+          2,
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          0,
+          3,
+          1,
+          0
+        ],
+        [
+          3,
+          3,
+          4,
+          3,
+          1,
+          0
+        ],
+        [
+          2,
+          2,
+          3,
+          5,
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 45,
+      "detected": "softlock",
+      "position_coverage": 0.7777777777777778,
+      "position_visits": [
+        [
+          3,
+          1,
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          2,
+          1,
+          2
+        ],
+        [
+          3,
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          2,
+          3,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 15,
+      "detected": "softlock",
+      "position_coverage": 0.3611111111111111,
+      "position_visits": [
+        [
+          1,
+          0,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 179,
+      "detected": "softlock",
+      "position_coverage": 0.2777777777777778,
+      "position_visits": [
+        [
+          55,
+          41,
+          25,
+          21,
+          2,
+          0
+        ],
+        [
+          29,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 731,
+      "detected": "softlock",
+      "position_coverage": 0.25,
+      "position_visits": [
+        [
+          309,
+          107,
+          74,
+          14,
+          2,
+          0
+        ],
+        [
+          161,
+          22,
+          38,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 518,
+      "detected": "softlock",
+      "position_coverage": 0.3055555555555556,
+      "position_visits": [
+        [
+          141,
+          142,
+          143,
+          61,
+          2,
+          0
+        ],
+        [
+          8,
+          8,
+          6,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": 492,
+      "detected": "softlock",
+      "position_coverage": 0.2777777777777778,
+      "position_visits": [
+        [
+          168,
+          184,
+          80,
+          25,
+          2,
+          0
+        ],
+        [
+          6,
+          16,
+          5,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          5,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bug": "softlock",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 56,
+      "detected": "softlock",
+      "position_coverage": 0.1388888888888889,
+      "position_visits": [
+        [
+          6,
+          38,
+          7,
+          4,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "bug": "wall_gap",
+      "policy": "random",
+      "discovered": 5,
+      "seeds": 5,
+      "time_to_discovery_detected_only": {
+        "mean": 49.2,
+        "ci95": [
+          13.8,
+          91.25999999999968
+        ],
+        "seed_values": [
+          17.0,
+          121.0,
+          76.0,
+          3.0,
+          29.0
+        ]
+      },
+      "mean_position_coverage": 0.3555555555555555
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "scripted",
+      "discovered": 0,
+      "seeds": 5,
+      "time_to_discovery_detected_only": null,
+      "mean_position_coverage": 0.3055555555555556
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "coverage",
+      "discovered": 5,
+      "seeds": 5,
+      "time_to_discovery_detected_only": {
+        "mean": 72.2,
+        "ci95": [
+          53.6,
+          86.8
+        ],
+        "seed_values": [
+          75.0,
+          77.0,
+          38.0,
+          77.0,
+          94.0
+        ]
+      },
+      "mean_position_coverage": 0.9055555555555556
+    },
+    {
+      "bug": "wall_gap",
+      "policy": "q_count",
+      "discovered": 2,
+      "seeds": 5,
+      "time_to_discovery_detected_only": {
+        "mean": 972.5,
+        "ci95": [
+          809.0,
+          1136.0
+        ],
+        "seed_values": [
+          809.0,
+          1136.0
+        ]
+      },
+      "mean_position_coverage": 0.4444444444444445
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "random",
+      "discovered": 5,
+      "seeds": 5,
+      "time_to_discovery_detected_only": {
+        "mean": 46.2,
+        "ci95": [
+          7.195,
+          97.2
+        ],
+        "seed_values": [
+          6.0,
+          7.0,
+          138.0,
+          70.0,
+          10.0
+        ]
+      },
+      "mean_position_coverage": 0.30000000000000004
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "scripted",
+      "discovered": 0,
+      "seeds": 5,
+      "time_to_discovery_detected_only": null,
+      "mean_position_coverage": 0.3055555555555556
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "coverage",
+      "discovered": 5,
+      "seeds": 5,
+      "time_to_discovery_detected_only": {
+        "mean": 36.6,
+        "ci95": [
+          14.8,
+          56.4
+        ],
+        "seed_values": [
+          4.0,
+          49.0,
+          67.0,
+          50.0,
+          13.0
+        ]
+      },
+      "mean_position_coverage": 0.5833333333333334
+    },
+    {
+      "bug": "score_overflow",
+      "policy": "q_count",
+      "discovered": 5,
+      "seeds": 5,
+      "time_to_discovery_detected_only": {
+        "mean": 296.6,
+        "ci95": [
+          117.8,
+          537.4
+        ],
+        "seed_values": [
+          155.0,
+          716.0,
+          177.0,
+          384.0,
+          51.0
+        ]
+      },
+      "mean_position_coverage": 0.19444444444444442
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "random",
+      "discovered": 5,
+      "seeds": 5,
+      "time_to_discovery_detected_only": {
+        "mean": 108.0,
+        "ci95": [
+          108.0,
+          108.0
+        ],
+        "seed_values": [
+          108.0,
+          108.0,
+          108.0,
+          108.0,
+          108.0
+        ]
+      },
+      "mean_position_coverage": 0.4833333333333333
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "scripted",
+      "discovered": 5,
+      "seeds": 5,
+      "time_to_discovery_detected_only": {
+        "mean": 108.0,
+        "ci95": [
+          108.0,
+          108.0
+        ],
+        "seed_values": [
+          108.0,
+          108.0,
+          108.0,
+          108.0,
+          108.0
+        ]
+      },
+      "mean_position_coverage": 0.2777777777777778
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "coverage",
+      "discovered": 5,
+      "seeds": 5,
+      "time_to_discovery_detected_only": {
+        "mean": 108.0,
+        "ci95": [
+          108.0,
+          108.0
+        ],
+        "seed_values": [
+          108.0,
+          108.0,
+          108.0,
+          108.0,
+          108.0
+        ]
+      },
+      "mean_position_coverage": 0.9111111111111111
+    },
+    {
+      "bug": "unreachable_checkpoint",
+      "policy": "q_count",
+      "discovered": 5,
+      "seeds": 5,
+      "time_to_discovery_detected_only": {
+        "mean": 108.0,
+        "ci95": [
+          108.0,
+          108.0
+        ],
+        "seed_values": [
+          108.0,
+          108.0,
+          108.0,
+          108.0,
+          108.0
+        ]
+      },
+      "mean_position_coverage": 0.15
+    },
+    {
+      "bug": "softlock",
+      "policy": "random",
+      "discovered": 5,
+      "seeds": 5,
+      "time_to_discovery_detected_only": {
+        "mean": 181.6,
+        "ci95": [
+          89.6,
+          244.4
+        ],
+        "seed_values": [
+          211.0,
+          9.0,
+          190.0,
+          267.0,
+          231.0
+        ]
+      },
+      "mean_position_coverage": 0.6611111111111111
+    },
+    {
+      "bug": "softlock",
+      "policy": "scripted",
+      "discovered": 0,
+      "seeds": 5,
+      "time_to_discovery_detected_only": null,
+      "mean_position_coverage": 0.3055555555555556
+    },
+    {
+      "bug": "softlock",
+      "policy": "coverage",
+      "discovered": 5,
+      "seeds": 5,
+      "time_to_discovery_detected_only": {
+        "mean": 35.0,
+        "ci95": [
+          15.4,
+          52.8
+        ],
+        "seed_values": [
+          6.0,
+          44.0,
+          65.0,
+          45.0,
+          15.0
+        ]
+      },
+      "mean_position_coverage": 0.5611111111111111
+    },
+    {
+      "bug": "softlock",
+      "policy": "q_count",
+      "discovered": 5,
+      "seeds": 5,
+      "time_to_discovery_detected_only": {
+        "mean": 395.2,
+        "ci95": [
+          173.0,
+          598.0
+        ],
+        "seed_values": [
+          179.0,
+          731.0,
+          518.0,
+          492.0,
+          56.0
+        ]
+      },
+      "mean_position_coverage": 0.25
+    }
+  ],
+  "censoring_limit_steps": 1200
+}

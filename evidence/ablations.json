@@ -1,0 +1,214 @@
+{
+  "rows": [
+    {
+      "setting": "reference",
+      "seed": 0,
+      "clip": 0.2,
+      "gae_lambda": 0.95,
+      "eval": {
+        "mean_score": 1.4,
+        "mean_bomb_hits": 0.4,
+        "mean_return": 0.4285000000000014
+      }
+    },
+    {
+      "setting": "reference",
+      "seed": 1,
+      "clip": 0.2,
+      "gae_lambda": 0.95,
+      "eval": {
+        "mean_score": 1.9666666666666666,
+        "mean_bomb_hits": 0.3333333333333333,
+        "mean_return": 1.1118333333333354
+      }
+    },
+    {
+      "setting": "reference",
+      "seed": 2,
+      "clip": 0.2,
+      "gae_lambda": 0.95,
+      "eval": {
+        "mean_score": 1.6,
+        "mean_bomb_hits": 0.36666666666666664,
+        "mean_return": 0.6626666666666686
+      }
+    },
+    {
+      "setting": "reference",
+      "seed": 3,
+      "clip": 0.2,
+      "gae_lambda": 0.95,
+      "eval": {
+        "mean_score": 1.9333333333333333,
+        "mean_bomb_hits": 0.16666666666666666,
+        "mean_return": 1.2188333333333359
+      }
+    },
+    {
+      "setting": "reference",
+      "seed": 4,
+      "clip": 0.2,
+      "gae_lambda": 0.95,
+      "eval": {
+        "mean_score": 2.1,
+        "mean_bomb_hits": 0.6666666666666666,
+        "mean_return": 0.8920000000000025
+      }
+    },
+    {
+      "setting": "no_clip",
+      "seed": 0,
+      "clip": 100.0,
+      "gae_lambda": 0.95,
+      "eval": {
+        "mean_score": 1.4,
+        "mean_bomb_hits": 0.4,
+        "mean_return": 0.4285000000000014
+      }
+    },
+    {
+      "setting": "no_clip",
+      "seed": 1,
+      "clip": 100.0,
+      "gae_lambda": 0.95,
+      "eval": {
+        "mean_score": 1.9666666666666666,
+        "mean_bomb_hits": 0.3333333333333333,
+        "mean_return": 1.1118333333333354
+      }
+    },
+    {
+      "setting": "no_clip",
+      "seed": 2,
+      "clip": 100.0,
+      "gae_lambda": 0.95,
+      "eval": {
+        "mean_score": 1.6,
+        "mean_bomb_hits": 0.36666666666666664,
+        "mean_return": 0.6626666666666686
+      }
+    },
+    {
+      "setting": "no_clip",
+      "seed": 3,
+      "clip": 100.0,
+      "gae_lambda": 0.95,
+      "eval": {
+        "mean_score": 1.9333333333333333,
+        "mean_bomb_hits": 0.16666666666666666,
+        "mean_return": 1.2188333333333359
+      }
+    },
+    {
+      "setting": "no_clip",
+      "seed": 4,
+      "clip": 100.0,
+      "gae_lambda": 0.95,
+      "eval": {
+        "mean_score": 2.1,
+        "mean_bomb_hits": 0.6666666666666666,
+        "mean_return": 0.8920000000000025
+      }
+    },
+    {
+      "setting": "short_gae",
+      "seed": 0,
+      "clip": 0.2,
+      "gae_lambda": 0.0,
+      "eval": {
+        "mean_score": 1.5666666666666667,
+        "mean_bomb_hits": 0.3333333333333333,
+        "mean_return": 0.6655000000000012
+      }
+    },
+    {
+      "setting": "short_gae",
+      "seed": 1,
+      "clip": 0.2,
+      "gae_lambda": 0.0,
+      "eval": {
+        "mean_score": 1.8666666666666667,
+        "mean_bomb_hits": 0.4,
+        "mean_return": 0.9323333333333355
+      }
+    },
+    {
+      "setting": "short_gae",
+      "seed": 2,
+      "clip": 0.2,
+      "gae_lambda": 0.0,
+      "eval": {
+        "mean_score": 1.6,
+        "mean_bomb_hits": 0.36666666666666664,
+        "mean_return": 0.6626666666666686
+      }
+    },
+    {
+      "setting": "short_gae",
+      "seed": 3,
+      "clip": 0.2,
+      "gae_lambda": 0.0,
+      "eval": {
+        "mean_score": 1.9,
+        "mean_bomb_hits": 0.3,
+        "mean_return": 1.0495000000000028
+      }
+    },
+    {
+      "setting": "short_gae",
+      "seed": 4,
+      "clip": 0.2,
+      "gae_lambda": 0.0,
+      "eval": {
+        "mean_score": 2.0,
+        "mean_bomb_hits": 0.5666666666666667,
+        "mean_return": 0.8910000000000025
+      }
+    }
+  ],
+  "summary_mean_score": {
+    "reference": {
+      "mean": 1.8,
+      "ci95": [
+        1.5533333333333335,
+        2.02
+      ],
+      "seed_values": [
+        1.4,
+        1.9666666666666666,
+        1.6,
+        1.9333333333333333,
+        2.1
+      ]
+    },
+    "no_clip": {
+      "mean": 1.8,
+      "ci95": [
+        1.5533333333333335,
+        2.02
+      ],
+      "seed_values": [
+        1.4,
+        1.9666666666666666,
+        1.6,
+        1.9333333333333333,
+        2.1
+      ]
+    },
+    "short_gae": {
+      "mean": 1.7866666666666666,
+      "ci95": [
+        1.64,
+        1.9333333333333336
+      ],
+      "seed_values": [
+        1.5666666666666667,
+        1.8666666666666667,
+        1.6,
+        1.9,
+        2.0
+      ]
+    }
+  },
+  "steps": 5120
+}
