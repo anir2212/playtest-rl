@@ -17,6 +17,19 @@ At **5,120 environment steps** per seed on Slicer:
 
 DQN and PPO families received the same environment-step budget, and the PPO comparison uses four vector environments. Some implementation defaults differ (including termination handling), so these are reference checks, not matched benchmark claims. Wide DQN intervals mean the apparent 0.447 fruit difference is inconclusive. Under this short budget PPO learned less fruit score than DQN; more training and hyperparameter tuning are open.
 
+### Separate 10,240-step budget run, 18 October 2026
+
+The same `run_neural` configuration was rerun from fresh seeded starts with **10,240 environment steps**, five training seeds (0–4), and 30 independent Slicer evaluation episodes per seed. The raw 20 agent/seed rows, settings and seed-level bootstrap summaries are in [`evidence/neural_10240.json`](evidence/neural_10240.json). This is an independent longer-budget endpoint run, **not a continuation** of the 5,120-step weights or a learning curve.
+
+| Agent | Mean fruit score / episode | 95% seed bootstrap interval | Mean bomb hits |
+|---|---:|---:|---:|
+| Scratch Double DQN | 6.633 | [5.740, 7.187] | 0.047 |
+| SB3 DQN | 6.173 | [5.300, 7.053] | 0.067 |
+| Scratch PPO | 1.460 | [0.907, 1.860] | 0.253 |
+| SB3 PPO | 1.767 | [1.607, 1.987] | 0.387 |
+
+The DQN endpoints are higher than in the earlier 5,120-step run on this synthetic task, but the code scales its epsilon-decay schedule to the requested budget; SB3's exploration fraction is likewise defined against total steps. Changing the budget also changes the behavior schedule, so the difference is **not** an isolated effect of 5,120 extra transitions. Scratch and SB3 have other algorithm/default differences, and five seeds leave substantial uncertainty. PPO did not show the same clear endpoint increase under this setup. No steps-to-threshold or real-game performance claim follows from two separately trained endpoints.
+
 PPO ablations at the same 5,120 steps: clipped reference mean fruit **1.800**, effectively unclipped policy **1.800**, and GAE λ=0 **1.787**. This bounded run shows no meaningful clipping/GAE effect; it does not establish those components are unnecessary.
 
 ## Reward design on GridQuest
