@@ -6,6 +6,7 @@ import math
 import random
 
 from envs.gridquest import DIRECTIONS, GridQuest
+from playtest.oracle import GameContract, observe_transition
 
 BUGS = ("wall_gap", "score_overflow", "unreachable_checkpoint", "softlock")
 POLICIES = ("random", "scripted", "coverage", "q_count")
@@ -36,6 +37,7 @@ def hunt(bug: str, policy: str, seed: int, max_steps: int = 1200):
         raise ValueError("unknown bug or policy")
     rng = random.Random(seed)
     env = GridQuest(bug=bug)
+    contract = GameContract(env.size, frozenset(env.wall), env.door_at, env.goal_at)
     state, _ = env.reset(seed=seed)
     seen_positions = {env.position}
     visits = defaultdict(int)
@@ -53,6 +55,7 @@ def hunt(bug: str, policy: str, seed: int, max_steps: int = 1200):
         else:
             action = rng.randrange(4) if rng.random() < 0.2 else max(range(4), key=lambda a: q[state][a])
         tried[(state, action)] += 1
+        before_position, before_key = env.position, env.key
         next_state, _, terminated, truncated, info = env.step(action)
         visits[env.position] += 1
         seen_positions.add(env.position)
@@ -60,8 +63,9 @@ def hunt(bug: str, policy: str, seed: int, max_steps: int = 1200):
             intrinsic = 1 / math.sqrt(visits[env.position])
             q[state][action] += 0.3 * (intrinsic + (0 if terminated or truncated else 0.95 * max(q[next_state])) - q[state][action])
         state = next_state
-        if info["bug_detected"]:
-            return {"time_to_discovery": tick, "detected": info["bug_detected"],
+        violation = observe_transition(contract, before_position, before_key, action, info)
+        if violation:
+            return {"time_to_discovery": tick, "detected": violation,
                     "position_coverage": len(seen_positions) / env.size ** 2,
                     "position_visits": [[visits[(x, y)] for x in range(env.size)]
                                         for y in range(env.size)]}
