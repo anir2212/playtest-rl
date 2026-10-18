@@ -60,6 +60,7 @@ class GridQuest(gym.Env):
         self.steps += 1
         x, y = self.position
         had_key = self.key
+        had_coin = self.coin
         dx, dy = DIRECTIONS[int(action)]
         nx, ny = x + dx, y + dy
         bug_detected = None
@@ -81,7 +82,7 @@ class GridQuest(gym.Env):
             self.score += 1
         if self.bug == "softlock" and self.position == (self.size - 2, 0):
             self.stuck = True
-        if self.bug == "score_overflow" and self.coin and self.position == self.coin_at:
+        if self.bug == "score_overflow" and had_coin and self.position == self.coin_at:
             self.score = 1_000_000
             bug_detected = "score_overflow"
         success = self.position == self.goal_at and self.key
