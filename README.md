@@ -1,14 +1,20 @@
 # PlaytestRL
 
-Reinforcement-learning agents for repeatable game testing.
+PlaytestRL uses two small Gymnasium games to ask how an automated player learns and whether it can expose a broken game rule. GridQuest makes reward-design mistakes visible; Slicer supports a bounded comparison of hand-written and library agents. A separate playtest harness measures how four search policies find planted defects.
 
-Custom Gymnasium game environments and agents for repeatable playtesting. The project compares tabular and neural agents, then uses seeded bug injections to measure what the agents catch.
-
-![Seeded agent learning comparison](figures/learning_comparison.png)
+![Seeded agent endpoint comparison](figures/learning_comparison.png)
 
 ## Why this project
 
-Manual game testing misses rare paths, while scripted bots repeat only paths someone anticipated. This project tests whether learning agents can reach more states and expose seeded defects in small, repeatable environments.
+Manual game testing can miss paths that nobody thought to script. An agent may reach those paths, but it may also learn to farm a badly designed reward. The games and injected defects here are small enough to inspect, so both successes and failures have an explanation.
+
+## Current milestones
+
+| Area | What works today | Next question |
+|---|---|---|
+| Games and agents | Checked GridQuest/Slicer environments, tabular Q-learning, scratch Double DQN/PPO and library references | What changes on unseen levels? |
+| Reward and bug studies | A reward-farming counterexample and a contract oracle for four planted defects | Can the oracle transfer to another game contract? |
+| Training evidence | Separate five-seed 5,120- and 10,240-step endpoints | What does a true checkpoint curve show under a fixed exploration schedule? |
 
 ## Run locally
 
@@ -34,4 +40,4 @@ The playtest comparison now stops when observed movement or score breaks the gam
 
 ## Scope
 
-The environments and bug set are authored fixtures. Detection rates here do not estimate performance on commercial games.
+The environments and bug set are authored fixtures. Detection rates here do not estimate performance on commercial games. The comparison figure shows evaluation endpoints rather than a learning curve, and the longer run started fresh agents.
