@@ -41,10 +41,66 @@ def curve_figure(evidence: Path, output: Path):
     plt.close(fig)
 
 
+def difficulty_figure(evidence: Path, output: Path):
+    """Dot plot of final Slicer scores per difficulty setting, one panel per agent."""
+    data = json.loads(evidence.read_text())
+    if data.get("protocol") != "slicer-difficulty-v1" or not data.get("curve_consistency", {}).get("identical"):
+        raise ValueError(f"{evidence} is not a consistent slicer-difficulty-v1 run")
+    summary = data["summary"]
+    settings = list(summary["anchors"])
+    rows = list(range(len(settings)))[::-1]
+    fig, axes = plt.subplots(1, len(summary["agents"]), figsize=(10, 4.9), sharey=True,
+                             sharex=True, constrained_layout=True)
+    for axis, (agent, info) in zip(axes, summary["agents"].items()):
+        for y, setting in zip(rows, settings):
+            anchors = summary["anchors"][setting]
+            axis.plot(anchors["random"]["mean_score"]["mean"], y, marker="|", markersize=12,
+                      color="#9a9a94", linestyle="none")
+            axis.plot(anchors["scripted"]["mean_score"]["mean"], y, marker="x", markersize=8,
+                      color="#5f5e5a", linestyle="none")
+            entry = info["settings"][setting]
+            ci = entry["mean_score"]
+            axis.errorbar(ci["mean"], y + 0.12, xerr=[[ci["mean"] - ci["ci95"][0]],
+                                                      [ci["ci95"][1] - ci["mean"]]],
+                          fmt="o", markersize=7, color="#2a78d6", elinewidth=2, capsize=0)
+            if "in_setting_reference" in entry:
+                ref = entry["in_setting_reference"]["mean_score"]
+                axis.errorbar(ref["mean"], y - 0.12, xerr=[[ref["mean"] - ref["ci95"][0]],
+                                                           [ref["ci95"][1] - ref["mean"]]],
+                              fmt="s", markersize=6, color="#eb6834", elinewidth=2, capsize=0)
+        axis.set_title(agent.replace("_", " "), fontsize=10)
+        axis.set_xlabel("Fruit score / 80-step episode at 20,480 steps")
+        axis.grid(axis="x", color="#e4e3dd", linewidth=0.8)
+        axis.set_axisbelow(True)
+        for side in ("top", "right"):
+            axis.spines[side].set_visible(False)
+    axes[0].set_yticks(rows, [s + (" (training)" if s == "train" else "") for s in settings])
+    handles = [plt.Line2D([], [], marker="o", color="#2a78d6", linestyle="none",
+                          label="trained on default setting (5 seeds, 95% CI)"),
+               plt.Line2D([], [], marker="s", color="#eb6834", linestyle="none",
+                          label="trained on this setting (5 seeds, 95% CI)"),
+               plt.Line2D([], [], marker="x", color="#5f5e5a", linestyle="none", label="scripted anchor"),
+               plt.Line2D([], [], marker="|", markersize=12, color="#9a9a94", linestyle="none",
+                          label="random anchor")]
+    fig.legend(handles=handles, loc="outside lower center", ncol=4, fontsize=8, frameon=False)
+    source = evidence.relative_to(ROOT) if evidence.is_relative_to(ROOT) else evidence
+    fig.suptitle("Slicer held-out difficulty settings (synthetic game); fruit score only, "
+                 f"bomb hits are in RESULTS.md\nsource: {source}", fontsize=9)
+    fig.savefig(output, dpi=180)
+    plt.close(fig)
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("--curve", type=Path, help="draw only the checkpoint curve from this JSON")
+    parser.add_argument("--difficulty", type=Path, help="draw only the difficulty figure from this JSON")
     args = parser.parse_args(argv)
+    if args.difficulty:
+        path = args.difficulty if args.difficulty.is_absolute() else ROOT / args.difficulty
+        (ROOT / "figures").mkdir(exist_ok=True)
+        difficulty_figure(path, ROOT / "figures" / "slicer_difficulty.png")
+        print("difficulty figure written")
+        return
     if args.curve:
         path = args.curve if args.curve.is_absolute() else ROOT / args.curve
         (ROOT / "figures").mkdir(exist_ok=True)

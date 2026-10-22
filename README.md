@@ -12,9 +12,9 @@ Manual game testing can miss paths that nobody thought to script. An agent may r
 
 | Area | What works today | Next question |
 |---|---|---|
-| Games and agents | Checked GridQuest/Slicer environments, tabular Q-learning, scratch Double DQN/PPO and library references | How do the learning agents do on unseen levels and harder settings? |
+| Games and agents | Checked GridQuest/Slicer environments, tabular Q-learning, scratch Double DQN/PPO and library references | Trained on the default Slicer, scratch Double DQN and PPO showed no measurable transfer loss on seven predeclared held-out bomb-share and speed settings; do library agents and held-out GridQuest layouts behave the same? |
 | Reward and bug studies | A reward-farming counterexample and a contract oracle for four planted defects, also evaluated on eight predeclared held-out maps with moved defects | Can the oracle transfer to another game contract? |
-| Training evidence | Separate five-seed 5,120- and 10,240-step endpoints, and five-seed 20,480-step checkpoint curves for scratch Double DQN and PPO with a fixed exploration schedule and a predeclared threshold | A difficulty sweep for the learning agents; library-agent curves are not measured |
+| Training evidence | Separate five-seed 5,120- and 10,240-step endpoints, and five-seed 20,480-step checkpoint curves for scratch Double DQN and PPO with a fixed exploration schedule and a predeclared threshold | Library-agent curves are not measured |
 
 ## Run locally
 
@@ -33,6 +33,8 @@ make all
 A separate [10,240-step neural run](evidence/neural_10240.json) doubles the earlier interaction budget for the same four agent families and five seed numbers. It starts fresh models and retains every seed row. The DQN endpoints improved in this small game, but exploration schedules also scale with the chosen budget, so these two runs do not form a checkpoint learning curve. The exact scores and intervals are in [Results](RESULTS.md).
 
 `make curve` trains one Double DQN and one PPO model per seed for 20,480 steps and evaluates the same evolving model every 1,024 steps; `make curve-figure` draws [the curve](figures/learning_curve.png) from the committed [evidence](evidence/learning_curve_20480.json). Its 5,120-step checkpoints reproduce the original endpoint run exactly.
+
+`make difficulty` runs the Slicer difficulty protocol frozen in [a protocol file](evidence/slicer_difficulty_protocol.json) before any result existed. Scratch Double DQN and PPO are trained on the default game with the curve settings (five seeds, 20,480 steps) and evaluated unchanged on seven held-out bomb-share and speed settings, against fresh agents trained on each setting and random and scripted anchors. No agent showed a measurable transfer loss. DQN's apparent fruit-score gains on the bomb-heavy settings came with more bomb hits, and PPO was barely above random everywhere ([figure](figures/slicer_difficulty.png), [evidence](evidence/slicer_difficulty_20480.json)). The default-setting models reproduce the committed curve checkpoints 210 of 210.
 
 `make unseen-protocol` freezes eight seeded held-out GridQuest maps (each with its own key, door, goal, walls and traps), plus the policies, seeds and metrics, in [a protocol file](evidence/unseen_levels_protocol.json), and refuses to overwrite it. `make unseen` refuses to run if the regenerated maps differ, then hunts every defect with every policy on every map and on clean copies. All four policies raised zero false alarms on the clean maps. Detection carried over for the random and coverage policies but fell for the count-bonus policy ([results](evidence/unseen_levels_results.json)).
 

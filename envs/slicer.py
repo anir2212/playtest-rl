@@ -10,11 +10,14 @@ class Slicer(gym.Env):
     metadata = {"render_modes": ["ansi"]}
 
     def __init__(self, bomb_ratio: float = 0.2, horizon: int = 80,
-                 render_mode: str | None = None):
-        if not 0 <= bomb_ratio <= 1 or horizon < 10:
+                 render_mode: str | None = None, speed: float = 1.0):
+        """``speed`` scales both object velocities. The default 1.0 multiplies each
+        sampled velocity by exactly 1.0, so default trajectories are unchanged."""
+        if not 0 <= bomb_ratio <= 1 or horizon < 10 or not 0.25 <= speed <= 3.0:
             raise ValueError("invalid difficulty")
         super().__init__()
         self.bomb_ratio = bomb_ratio
+        self.speed = float(speed)
         self.horizon = horizon
         self.render_mode = render_mode
         self.action_space = spaces.Discrete(4)  # stay, left, right, slice
@@ -24,8 +27,8 @@ class Slicer(gym.Env):
     def _spawn(self):
         self.object_x = float(self.np_random.uniform(0.05, 0.95))
         self.object_y = 0.0
-        self.velocity_x = float(self.np_random.uniform(-0.015, 0.015))
-        self.velocity_y = float(self.np_random.uniform(0.03, 0.055))
+        self.velocity_x = float(self.np_random.uniform(-0.015, 0.015)) * self.speed
+        self.velocity_y = float(self.np_random.uniform(0.03, 0.055)) * self.speed
         self.is_bomb = bool(self.np_random.random() < self.bomb_ratio)
 
     def _obs(self):

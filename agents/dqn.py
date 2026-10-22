@@ -51,7 +51,8 @@ def double_dqn_target(online: QNetwork, target: QNetwork, next_obs, rewards, don
 def train(seed: int, steps: int = 5000, double: bool = True,
           bomb_ratio: float = 0.2, batch_size: int = 64,
           epsilon_decay_steps: int | None = None,
-          checkpoint_every: int | None = None, on_checkpoint=None):
+          checkpoint_every: int | None = None, on_checkpoint=None,
+          speed: float = 1.0):
     """Train one agent.
 
     By default epsilon decays over 70% of ``steps`` (the historical endpoint runs).
@@ -69,7 +70,7 @@ def train(seed: int, steps: int = 5000, double: bool = True,
     torch.set_num_threads(2)
     torch.manual_seed(seed)
     rng = random.Random(seed)
-    env = Slicer(bomb_ratio=bomb_ratio)
+    env = Slicer(bomb_ratio=bomb_ratio, speed=speed)
     obs, _ = env.reset(seed=seed)
     online, target = QNetwork(), QNetwork()
     target.load_state_dict(online.state_dict())
@@ -117,8 +118,9 @@ def train(seed: int, steps: int = 5000, double: bool = True,
                     "steps": steps, "double": double, "epsilon_decay_steps": decay}
 
 
-def evaluate(model: QNetwork, seed: int, episodes: int = 30, bomb_ratio: float = 0.2):
-    env = Slicer(bomb_ratio=bomb_ratio)
+def evaluate(model: QNetwork, seed: int, episodes: int = 30, bomb_ratio: float = 0.2,
+             speed: float = 1.0):
+    env = Slicer(bomb_ratio=bomb_ratio, speed=speed)
     scores, bombs, returns = [], [], []
     for episode in range(episodes):
         obs, _ = env.reset(seed=seed * 100000 + episode)
