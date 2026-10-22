@@ -1,0 +1,85 @@
+{
+  "name": "slicer-difficulty-v1",
+  "declared": "2026-10-22, before any agent was trained or evaluated on a held-out setting",
+  "agents": [
+    "double_dqn",
+    "scratch_ppo"
+  ],
+  "excluded_agents": "Tabular Q (its GridQuest state is a map-specific position index and cannot transfer by construction) and the SB3 references (no curve protocol exists for them yet).",
+  "training_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "training_setting": "train",
+  "settings": {
+    "train": {
+      "bomb_ratio": 0.2,
+      "speed": 1.0
+    },
+    "no_bombs": {
+      "bomb_ratio": 0.0,
+      "speed": 1.0
+    },
+    "slow_0.7": {
+      "bomb_ratio": 0.2,
+      "speed": 0.7
+    },
+    "bombs_0.4": {
+      "bomb_ratio": 0.4,
+      "speed": 1.0
+    },
+    "bombs_0.6": {
+      "bomb_ratio": 0.6,
+      "speed": 1.0
+    },
+    "fast_1.3": {
+      "bomb_ratio": 0.2,
+      "speed": 1.3
+    },
+    "fast_1.6": {
+      "bomb_ratio": 0.2,
+      "speed": 1.6
+    },
+    "bombs_0.4_fast_1.3": {
+      "bomb_ratio": 0.4,
+      "speed": 1.3
+    }
+  },
+  "held_out": [
+    "no_bombs",
+    "slow_0.7",
+    "bombs_0.4",
+    "bombs_0.6",
+    "fast_1.3",
+    "fast_1.6",
+    "bombs_0.4_fast_1.3"
+  ],
+  "setting_notes": "speed scales both sampled object velocities (default range: vertical 0.03-0.055, horizontal +/-0.015 per tick); bomb_ratio is the chance a spawned object is a bomb. Horizon (80), cursor step (0.12), slice window (0.14) and rewards are unchanged.",
+  "training": "Frozen 20 October curve protocol (analysis/curves.py PROTOCOL): 20,480 environment steps, checkpoints every 1,024 steps, DQN epsilon 1.0 to 0.05 over 3,584 absolute steps, PPO 512-step rollouts, every other hyperparameter at its code default. Nothing is tuned for this protocol.",
+  "total_steps": 20480,
+  "checkpoint_every": 1024,
+  "dqn_epsilon_decay_steps": 3584,
+  "eval_episodes": 30,
+  "eval_seed_base": 7000,
+  "eval_seed_rule": "7000 + training seed on every setting, a seed block no earlier run used; episode e resets with seed (7000 + training seed) * 100000 + e",
+  "consistency_eval_seed_base": 1000,
+  "consistency_rule": "Training-setting models are also evaluated on the default Slicer with evaluation seed 1000 + training seed at every checkpoint. Those 210 rows must equal evidence/learning_curve_20480.json (score, bomb hits, return and parameter fingerprint).",
+  "eval_policy": "greedy (argmax), as in the curve protocol",
+  "anchors": {
+    "random": "uniform random action, numpy default_rng(evaluation seed)",
+    "scripted": "fixed rule written before any held-out evaluation: stay on a bomb; on a fruit, slice if next-tick y > 0.2 and |cursor - next-tick x| < 0.14, otherwise step toward next-tick x when more than 0.06 away"
+  },
+  "primary_metric": "Per-seed mean fruit score over the 30 evaluation episodes at 20,480 steps, for training-setting models on each setting; five-seed mean with the seed-level bootstrap 95% interval (analysis.aggregate). Mean bomb hits reported alongside.",
+  "secondary_metrics": [
+    "anchor-normalized score per seed, (agent - random) / (scripted - random), using the anchors on the same evaluation episodes; defined for a setting only if scripted beats random by more than 0.5 fruit on every evaluation seed",
+    "transfer gap = in-setting reference mean minus training-setting model mean on that held-out setting at 20,480 steps, with a 2,000-resample bootstrap over the two independent five-seed groups",
+    "held-out score at every 1,024-step checkpoint, descriptive only; no checkpoint is selected as best"
+  ],
+  "decision_rule": "For each agent and held-out setting: 'transfer loss' if the gap's 95% interval lies above 0, 'transfer gain' if below 0, otherwise 'no measurable difference' (with five seeds this is not evidence of equivalence). Every result is reported, whatever its direction.",
+  "tuning": "None. Settings, seeds, budgets, anchors and metrics are frozen by this protocol; misses and failures are reported, not re-run.",
+  "written_at_utc": "2026-10-22T09:29:41+00:00",
+  "curve_evidence_sha256": "48d9ea68437de3490c2f6c1e1d003732984539bea8d4ddeeb22a148f53a435b7"
+}

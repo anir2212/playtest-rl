@@ -37,7 +37,8 @@ def gae_advantages(rewards, values, dones, last_values, gamma=0.99, lam=0.95):
 
 def train(seed: int, steps: int = 5120, n_envs: int = 4, rollout: int = 128,
           clip: float = 0.2, lam: float = 0.95, bomb_ratio: float = 0.2,
-          checkpoint_every: int | None = None, on_checkpoint=None):
+          checkpoint_every: int | None = None, on_checkpoint=None,
+          speed: float = 1.0):
     """Train one agent; ``on_checkpoint(step, model)`` sees the same evolving model.
 
     Checkpoints fall at step 0 and after every ``checkpoint_every`` consumed steps,
@@ -54,7 +55,7 @@ def train(seed: int, steps: int = 5120, n_envs: int = 4, rollout: int = 128,
     torch.set_num_threads(2)
     torch.manual_seed(seed)
     rng = np.random.default_rng(seed)
-    env = SyncVectorEnv([lambda: Slicer(bomb_ratio=bomb_ratio) for _ in range(n_envs)])
+    env = SyncVectorEnv([lambda: Slicer(bomb_ratio=bomb_ratio, speed=speed) for _ in range(n_envs)])
     obs, _ = env.reset(seed=seed)
     model = ActorCritic()
     optimizer = torch.optim.Adam(model.parameters(), lr=3e-4)
@@ -114,8 +115,9 @@ def train(seed: int, steps: int = 5120, n_envs: int = 4, rollout: int = 128,
     return model, {"steps": consumed, "updates": histories, "clip": clip, "gae_lambda": lam}
 
 
-def evaluate(model: ActorCritic, seed: int, episodes: int = 30, bomb_ratio: float = 0.2):
-    env = Slicer(bomb_ratio=bomb_ratio)
+def evaluate(model: ActorCritic, seed: int, episodes: int = 30, bomb_ratio: float = 0.2,
+             speed: float = 1.0):
+    env = Slicer(bomb_ratio=bomb_ratio, speed=speed)
     scores, bombs, returns = [], [], []
     for episode in range(episodes):
         obs, _ = env.reset(seed=seed * 100000 + episode)

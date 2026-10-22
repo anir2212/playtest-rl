@@ -1,7 +1,8 @@
 PYTHON ?= .venv/bin/python
 export MPLCONFIGDIR := $(CURDIR)/.mplconfig
 export OMP_NUM_THREADS := 2
-.PHONY: test q neural playtest ablations curve curve-figure unseen-protocol unseen figures all
+DIFFICULTY_WORKERS ?= 4
+.PHONY: test q neural playtest ablations curve curve-figure unseen-protocol unseen difficulty-protocol difficulty difficulty-figure figures all
 all: q neural playtest ablations figures
 test:
 	$(PYTHON) -m pytest -q
@@ -21,5 +22,11 @@ unseen-protocol:
 	$(PYTHON) -m playtest.unseen --write-protocol
 unseen:
 	$(PYTHON) -m playtest.unseen --run
+difficulty-protocol:
+	$(PYTHON) -m analysis.difficulty --write-protocol
+difficulty:
+	$(PYTHON) -m analysis.difficulty --run --workers $(DIFFICULTY_WORKERS)
+difficulty-figure:
+	$(PYTHON) -m analysis.figures --difficulty evidence/slicer_difficulty_20480.json
 figures:
 	$(PYTHON) -m analysis.figures
