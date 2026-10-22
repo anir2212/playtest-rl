@@ -36,9 +36,21 @@ def gae_advantages(rewards, values, dones, last_values, gamma=0.99, lam=0.95):
 
 
 def train(seed: int, steps: int = 5120, n_envs: int = 4, rollout: int = 128,
-          clip: float = 0.2, lam: float = 0.95, bomb_ratio: float = 0.2):
+          clip: float = 0.2, lam: float = 0.95, bomb_ratio: float = 0.2,
+          checkpoint_every: int | None = None, on_checkpoint=None):
+    """Train one agent; ``on_checkpoint(step, model)`` sees the same evolving model.
+
+    Checkpoints fall at step 0 and after every ``checkpoint_every`` consumed steps,
+    which must be a whole number of vectorized rollouts.
+    """
     if steps < n_envs * rollout:
         raise ValueError("steps smaller than one rollout")
+    if (checkpoint_every is None) != (on_checkpoint is None):
+        raise ValueError("checkpoint_every and on_checkpoint must be given together")
+    if checkpoint_every is not None and (checkpoint_every <= 0
+                                         or checkpoint_every % (n_envs * rollout)
+                                         or steps % checkpoint_every):
+        raise ValueError("checkpoint_every must be a multiple of one rollout and divide steps")
     torch.set_num_threads(2)
     torch.manual_seed(seed)
     rng = np.random.default_rng(seed)
@@ -48,6 +60,8 @@ def train(seed: int, steps: int = 5120, n_envs: int = 4, rollout: int = 128,
     optimizer = torch.optim.Adam(model.parameters(), lr=3e-4)
     histories = []
     consumed = 0
+    if on_checkpoint is not None:
+        on_checkpoint(0, model)
     while consumed + n_envs * rollout <= steps:
         states, actions, old_logprobs, rewards, dones, values = [], [], [], [], [], []
         for _ in range(rollout):
@@ -94,6 +108,8 @@ def train(seed: int, steps: int = 5120, n_envs: int = 4, rollout: int = 128,
         consumed += n_envs * rollout
         histories.append({"steps": consumed, "mean_rollout_reward": float(rewards_np.mean()),
                           "mean_loss": float(np.mean(losses))})
+        if on_checkpoint is not None and consumed % checkpoint_every == 0:
+            on_checkpoint(consumed, model)
     env.close()
     return model, {"steps": consumed, "updates": histories, "clip": clip, "gae_lambda": lam}
 

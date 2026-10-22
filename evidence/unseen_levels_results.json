@@ -1,0 +1,7508 @@
+{
+  "protocol": "gridquest-unseen-levels-v1",
+  "protocol_sha256": "7d394067e1bd02054ab8c3c0ec90e3e489ed4743864df5c988343d0b601c69ee",
+  "protocol_written_at_utc": "2026-10-20T10:55:50+00:00",
+  "started_at_utc": "2026-10-20T10:55:50+00:00",
+  "finished_at_utc": "2026-10-20T10:55:53+00:00",
+  "levels_sha256": "56c38f872a5e82ce8eb9f8b6b747e04ed18f78c7fb4aeaa3da487d8c3e7a049f",
+  "summary": {
+    "cells": [
+      {
+        "defect": "wall_gap",
+        "policy": "random",
+        "detected": 38,
+        "n": 40,
+        "wilson_95": [
+          0.835,
+          0.9862
+        ],
+        "mean_step_detected_only": 275.9,
+        "median_step_detected_only": 172.0,
+        "censored": 2,
+        "violation_kinds": {
+          "out_of_bounds": 38
+        },
+        "maps_with_any_detection": 8
+      },
+      {
+        "defect": "wall_gap",
+        "policy": "scripted",
+        "detected": 0,
+        "n": 40,
+        "wilson_95": [
+          0.0,
+          0.0876
+        ],
+        "mean_step_detected_only": null,
+        "median_step_detected_only": null,
+        "censored": 40,
+        "violation_kinds": {},
+        "maps_with_any_detection": 0
+      },
+      {
+        "defect": "wall_gap",
+        "policy": "coverage",
+        "detected": 40,
+        "n": 40,
+        "wilson_95": [
+          0.9124,
+          1.0
+        ],
+        "mean_step_detected_only": 73.5,
+        "median_step_detected_only": 73.0,
+        "censored": 0,
+        "violation_kinds": {
+          "out_of_bounds": 40
+        },
+        "maps_with_any_detection": 8
+      },
+      {
+        "defect": "wall_gap",
+        "policy": "q_count",
+        "detected": 10,
+        "n": 40,
+        "wilson_95": [
+          0.1419,
+          0.4019
+        ],
+        "mean_step_detected_only": 450.4,
+        "median_step_detected_only": 261.5,
+        "censored": 30,
+        "violation_kinds": {
+          "out_of_bounds": 10
+        },
+        "maps_with_any_detection": 4
+      },
+      {
+        "defect": "score_overflow",
+        "policy": "random",
+        "detected": 40,
+        "n": 40,
+        "wilson_95": [
+          0.9124,
+          1.0
+        ],
+        "mean_step_detected_only": 137.8,
+        "median_step_detected_only": 104.0,
+        "censored": 0,
+        "violation_kinds": {
+          "score_out_of_bounds": 40
+        },
+        "maps_with_any_detection": 8
+      },
+      {
+        "defect": "score_overflow",
+        "policy": "scripted",
+        "detected": 0,
+        "n": 40,
+        "wilson_95": [
+          0.0,
+          0.0876
+        ],
+        "mean_step_detected_only": null,
+        "median_step_detected_only": null,
+        "censored": 40,
+        "violation_kinds": {},
+        "maps_with_any_detection": 0
+      },
+      {
+        "defect": "score_overflow",
+        "policy": "coverage",
+        "detected": 40,
+        "n": 40,
+        "wilson_95": [
+          0.9124,
+          1.0
+        ],
+        "mean_step_detected_only": 73.5,
+        "median_step_detected_only": 72.0,
+        "censored": 0,
+        "violation_kinds": {
+          "score_out_of_bounds": 40
+        },
+        "maps_with_any_detection": 8
+      },
+      {
+        "defect": "score_overflow",
+        "policy": "q_count",
+        "detected": 12,
+        "n": 40,
+        "wilson_95": [
+          0.1807,
+          0.4543
+        ],
+        "mean_step_detected_only": 595.8,
+        "median_step_detected_only": 557.5,
+        "censored": 28,
+        "violation_kinds": {
+          "score_out_of_bounds": 12
+        },
+        "maps_with_any_detection": 6
+      },
+      {
+        "defect": "unreachable_checkpoint",
+        "policy": "random",
+        "detected": 39,
+        "n": 40,
+        "wilson_95": [
+          0.8712,
+          0.9956
+        ],
+        "mean_step_detected_only": 116.7,
+        "median_step_detected_only": 71,
+        "censored": 1,
+        "violation_kinds": {
+          "goal_entry_blocked": 39
+        },
+        "maps_with_any_detection": 8
+      },
+      {
+        "defect": "unreachable_checkpoint",
+        "policy": "scripted",
+        "detected": 40,
+        "n": 40,
+        "wilson_95": [
+          0.9124,
+          1.0
+        ],
+        "mean_step_detected_only": 6.6,
+        "median_step_detected_only": 6.5,
+        "censored": 0,
+        "violation_kinds": {
+          "goal_entry_blocked": 40
+        },
+        "maps_with_any_detection": 8
+      },
+      {
+        "defect": "unreachable_checkpoint",
+        "policy": "coverage",
+        "detected": 40,
+        "n": 40,
+        "wilson_95": [
+          0.9124,
+          1.0
+        ],
+        "mean_step_detected_only": 49.3,
+        "median_step_detected_only": 40.5,
+        "censored": 0,
+        "violation_kinds": {
+          "goal_entry_blocked": 40
+        },
+        "maps_with_any_detection": 8
+      },
+      {
+        "defect": "unreachable_checkpoint",
+        "policy": "q_count",
+        "detected": 26,
+        "n": 40,
+        "wilson_95": [
+          0.4951,
+          0.7787
+        ],
+        "mean_step_detected_only": 300.7,
+        "median_step_detected_only": 221.5,
+        "censored": 14,
+        "violation_kinds": {
+          "goal_entry_blocked": 26
+        },
+        "maps_with_any_detection": 7
+      },
+      {
+        "defect": "softlock",
+        "policy": "random",
+        "detected": 40,
+        "n": 40,
+        "wilson_95": [
+          0.9124,
+          1.0
+        ],
+        "mean_step_detected_only": 127.1,
+        "median_step_detected_only": 68.0,
+        "censored": 0,
+        "violation_kinds": {
+          "legal_move_blocked": 40
+        },
+        "maps_with_any_detection": 8
+      },
+      {
+        "defect": "softlock",
+        "policy": "scripted",
+        "detected": 5,
+        "n": 40,
+        "wilson_95": [
+          0.0546,
+          0.2611
+        ],
+        "mean_step_detected_only": 5,
+        "median_step_detected_only": 5,
+        "censored": 35,
+        "violation_kinds": {
+          "legal_move_blocked": 5
+        },
+        "maps_with_any_detection": 1
+      },
+      {
+        "defect": "softlock",
+        "policy": "coverage",
+        "detected": 40,
+        "n": 40,
+        "wilson_95": [
+          0.9124,
+          1.0
+        ],
+        "mean_step_detected_only": 29.6,
+        "median_step_detected_only": 24.0,
+        "censored": 0,
+        "violation_kinds": {
+          "legal_move_blocked": 39,
+          "goal_entry_blocked": 1
+        },
+        "maps_with_any_detection": 8
+      },
+      {
+        "defect": "softlock",
+        "policy": "q_count",
+        "detected": 25,
+        "n": 40,
+        "wilson_95": [
+          0.4703,
+          0.7578
+        ],
+        "mean_step_detected_only": 250.4,
+        "median_step_detected_only": 216,
+        "censored": 15,
+        "violation_kinds": {
+          "legal_move_blocked": 25
+        },
+        "maps_with_any_detection": 7
+      }
+    ],
+    "clean_false_alarms": {
+      "random": 0,
+      "scripted": 0,
+      "coverage": 0,
+      "q_count": 0
+    },
+    "clean_runs_per_policy": 40
+  },
+  "original_map_contract_run": {
+    "wall_gap|random": "5/5",
+    "wall_gap|scripted": "0/5",
+    "wall_gap|coverage": "5/5",
+    "wall_gap|q_count": "2/5",
+    "score_overflow|random": "5/5",
+    "score_overflow|scripted": "0/5",
+    "score_overflow|coverage": "5/5",
+    "score_overflow|q_count": "5/5",
+    "unreachable_checkpoint|random": "5/5",
+    "unreachable_checkpoint|scripted": "5/5",
+    "unreachable_checkpoint|coverage": "5/5",
+    "unreachable_checkpoint|q_count": "0/5",
+    "softlock|random": "5/5",
+    "softlock|scripted": "0/5",
+    "softlock|coverage": "5/5",
+    "softlock|q_count": "5/5"
+  },
+  "rows": [
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.7778
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4722
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.6389
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5
+    },
+    {
+      "map": 0,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8056
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 613,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.9444
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 16,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 346,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 378,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 199,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.6944
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 124,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.9444
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 108,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.9444
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 29,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.6667
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 75,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8056
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 45,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8333
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 958,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.75
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 227,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.4167
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.6389
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5
+    },
+    {
+      "map": 0,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8056
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 21,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.2778
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 133,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.6111
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 10,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.2222
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 112,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.6944
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 58,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.4444
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 36,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 78,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 79,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8611
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 17,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.3333
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 63,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.7778
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4722
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 1049,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.6111
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5
+    },
+    {
+      "map": 0,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 924,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.7778
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 127,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.7222
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 20,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 4,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1111
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 92,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.6667
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 128,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.6111
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": 4,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1111
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": 4,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1111
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": 4,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1111
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": 4,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1111
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": 4,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1111
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 44,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.6111
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 4,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1111
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 23,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.5
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 26,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.5556
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 8,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 97,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.3611
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 16,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1111
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 5,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1111
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": 337,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2778
+    },
+    {
+      "map": 0,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 15,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1111
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 518,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 125,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.5556
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 422,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 54,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 71,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.5
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 28,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.4444
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 65,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 7,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1389
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 14,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 20,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.4167
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.7778
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4722
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.6389
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5
+    },
+    {
+      "map": 0,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8056
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3878
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4286
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4694
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4898
+    },
+    {
+      "map": 1,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.551
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 13,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.1224
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 102,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.3673
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 586,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.898
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 2,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.0612
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 978,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.898
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 102,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8367
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 79,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.7959
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 48,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.551
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 61,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.7959
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 2,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.0612
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3878
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4286
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4694
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4898
+    },
+    {
+      "map": 1,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 296,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.3265
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 263,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8163
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 304,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.7959
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 96,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.4694
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 85,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.6327
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 39,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.3878
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 73,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.7755
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 46,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.6122
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 75,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.7551
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 110,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8571
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 140,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3878
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 132,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.2653
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 688,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.3878
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4898
+    },
+    {
+      "map": 1,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.551
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 11,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0816
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 1,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0204
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 283,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.8163
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 1,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0204
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 1,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0204
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": 7,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": 7,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": 7,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": 7,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": 7,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 98,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.7959
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 73,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.7551
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 41,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.5102
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 59,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.7551
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 1,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0204
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3878
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4286
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4694
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4898
+    },
+    {
+      "map": 1,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 295,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2857
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 4,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.0612
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 9,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1224
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 150,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.6327
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 8,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.102
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 9,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.102
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": 5,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.102
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": 5,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.102
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": 5,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.102
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": 5,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.102
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": 5,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.102
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 5,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.0612
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 70,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.7143
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 39,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.4694
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 56,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.7143
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 10,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.102
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 591,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3265
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 444,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3878
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4694
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4898
+    },
+    {
+      "map": 1,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 3,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.0612
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8594
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.875
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8594
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.875
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8125
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.875
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.875
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.875
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.875
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.875
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2344
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2656
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4062
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2031
+    },
+    {
+      "map": 2,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4375
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 124,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.5156
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 249,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.6875
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 92,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.5469
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.875
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 447,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.7969
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 84,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.6406
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 313,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8906
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 127,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8281
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 72,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.6094
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 33,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.4062
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2344
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2656
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 1099,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.4219
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2031
+    },
+    {
+      "map": 2,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 1102,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.4062
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 346,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.7656
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 115,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.25
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 22,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.1719
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 212,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.6094
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 19,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.1562
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 163,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8594
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 94,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.75
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 52,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.4844
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 138,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8594
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 123,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8594
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2344
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2656
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 851,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.2969
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2031
+    },
+    {
+      "map": 2,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 434,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.2344
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 221,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.7188
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 545,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.8125
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 192,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.6719
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 259,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.7344
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8125
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": 13,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2031
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": 13,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2031
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": 13,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2031
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": 13,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2031
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": 13,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2031
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 68,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.5469
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 112,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.7969
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 35,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.3438
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 125,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.8125
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 87,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.7344
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 1094,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 246,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1406
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 446,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": 535,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1562
+    },
+    {
+      "map": 2,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 34,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1406
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 48,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1406
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 4,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.0469
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 27,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1875
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 537,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.8281
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 170,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.6094
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 15,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1562
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 35,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.375
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 3,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.0312
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 6,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.0625
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 71,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.5312
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2344
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 578,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2188
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4062
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2031
+    },
+    {
+      "map": 2,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4375
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4444
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4167
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4444
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3333
+    },
+    {
+      "map": 3,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4167
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 66,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 564,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 76,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.6389
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 145,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.5833
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 37,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.4444
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 97,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 35,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.5833
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 59,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8056
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 74,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 83,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8333
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4444
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4167
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4444
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3333
+    },
+    {
+      "map": 3,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4167
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 70,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.5556
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 168,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.6111
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 81,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.6667
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 143,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.5556
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 44,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.4722
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 33,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 33,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 53,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.7778
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 75,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8611
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 23,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.4444
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4444
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4167
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4444
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3333
+    },
+    {
+      "map": 3,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4167
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 41,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 44,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 132,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.75
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 84,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 54,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.6389
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": 3,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0833
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": 3,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0833
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": 3,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0833
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": 3,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0833
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": 3,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0833
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 50,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.8333
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 29,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.4444
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 3,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0833
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 23,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.3611
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 35,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.6389
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 95,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2222
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 945,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.3611
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 566,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.3333
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3333
+    },
+    {
+      "map": 3,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 299,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2778
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 21,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2222
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 65,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3889
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 9,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 81,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 17,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2222
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 13,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 12,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 24,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.4722
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 13,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 35,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.6389
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 67,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 50,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 238,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2778
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": 379,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.25
+    },
+    {
+      "map": 3,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 80,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.25
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4694
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5102
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5306
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3673
+    },
+    {
+      "map": 4,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4898
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 591,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.898
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 36,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.3878
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 294,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8367
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 376,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.7143
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 1071,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.898
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 48,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.6939
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 108,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.898
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 79,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8163
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 82,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.7551
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 134,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.898
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4694
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5102
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5306
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3673
+    },
+    {
+      "map": 4,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4898
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 4,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.0612
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 233,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.7959
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 150,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.2857
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 224,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.2653
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 82,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.4082
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 79,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 81,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.7959
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 25,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.3061
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 39,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.2857
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 52,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.6122
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 370,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.2857
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 176,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.2449
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5306
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3673
+    },
+    {
+      "map": 4,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 592,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.4286
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 1,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0204
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 148,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.6531
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 22,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.102
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 7,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0816
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 5,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0816
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": 1,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0204
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": 1,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0204
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": 1,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0204
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": 1,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0204
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": 1,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0204
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 1,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0204
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 78,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.7551
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 12,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1837
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 7,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.102
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 48,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.5714
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 26,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0204
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 173,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2041
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 166,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2041
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": 10,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0204
+    },
+    {
+      "map": 4,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 2,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0204
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 137,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.5306
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 28,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2449
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 165,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3878
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 611,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.8367
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 225,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.7755
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 23,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3061
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 27,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2857
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 31,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3673
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 96,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.7551
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 26,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2857
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 579,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3673
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 545,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3878
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 238,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3469
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": 217,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2245
+    },
+    {
+      "map": 4,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 66,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2041
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9062
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8906
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9062
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8906
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9062
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9062
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9062
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9062
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9062
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9062
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2969
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3906
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4219
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2812
+    },
+    {
+      "map": 5,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4844
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 580,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.9062
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8906
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 352,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8594
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 13,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.125
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 800,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.875
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 132,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8906
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 96,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.7969
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 127,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.9062
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 116,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8594
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 16,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.1406
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2969
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3906
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4219
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2812
+    },
+    {
+      "map": 5,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4844
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 192,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.6562
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 261,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.7969
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 5,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.0781
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 326,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.7969
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 166,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.5625
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 78,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.7344
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 44,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.4219
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 106,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8125
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 133,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.875
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 129,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.875
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2969
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3906
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 1198,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.4219
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2812
+    },
+    {
+      "map": 5,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 212,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.25
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 201,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.6719
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 454,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.875
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 211,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.75
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 23,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1406
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 9,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": 9,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0938
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": 9,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0938
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": 9,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0938
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": 9,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0938
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": 9,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0938
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 6,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0781
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 110,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.8594
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 117,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.8281
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 110,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.75
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 169,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.875
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 579,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.25
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3906
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 579,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.3281
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2812
+    },
+    {
+      "map": 5,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 3,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0469
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 32,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2656
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 258,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.7812
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 7,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.0938
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 59,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3281
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 125,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.5156
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1094
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 43,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.375
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 22,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2656
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 21,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.25
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 34,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3281
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 67,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.5625
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2969
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3906
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4219
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.2812
+    },
+    {
+      "map": 5,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 793,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.4531
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3333
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 6,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 122,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8056
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 21,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.25
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 17,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.2778
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 117,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.75
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 216,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.9167
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 13,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.2778
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 11,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.2778
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 7,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 60,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.7778
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 41,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 55,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 37,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 665,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.3333
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": 47,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.1944
+    },
+    {
+      "map": 6,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 18,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 32,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 411,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 610,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 57,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.4444
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 45,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.5833
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 65,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8056
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 150,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 80,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8889
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 17,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.3611
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 91,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8611
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3333
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 6,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 52,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 300,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.6667
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 71,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.5556
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 83,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.6111
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 28,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.4167
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": 10,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2778
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": 10,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2778
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": 10,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2778
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": 10,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2778
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": 10,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2778
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 19,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.3333
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 41,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.6667
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 28,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 30,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.5
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 77,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.8056
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5278
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3333
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 628,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.2778
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": 197,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.3333
+    },
+    {
+      "map": 6,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 429,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.3611
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 123,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.7778
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 25,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2222
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 18,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.25
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 119,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.7222
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 129,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.75
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.3056
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 14,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.25
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 12,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.25
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 8,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1389
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 48,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.6944
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 19,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3333
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 65,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1389
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 43,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1389
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 27,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": 49,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1667
+    },
+    {
+      "map": 6,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 33,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1389
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9388
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9388
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9388
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9184
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9388
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9388
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9388
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9388
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9388
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.9388
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5306
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.449
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4286
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4694
+    },
+    {
+      "map": 7,
+      "defect": null,
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.6531
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 344,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8776
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 8,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.1633
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 314,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.9592
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 41,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.2449
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 139,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.6122
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 10,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 79,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.8571
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 49,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.6735
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 70,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.7959
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 10,
+      "detected": "out_of_bounds",
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5306
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.449
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4286
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4694
+    },
+    {
+      "map": 7,
+      "defect": "wall_gap",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.6531
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 25,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.2449
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 140,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.7347
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 20,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.2653
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 131,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.6939
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 55,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.4286
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 71,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.7959
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 53,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.7551
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 32,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.4082
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 42,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.6122
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 69,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.8367
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5306
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.449
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4286
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4694
+    },
+    {
+      "map": 7,
+      "defect": "score_overflow",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 523,
+      "detected": "score_out_of_bounds",
+      "position_coverage": 0.4898
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 350,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.8571
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 9,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 180,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.6327
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 18,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0816
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 141,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.5918
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": 6,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1224
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": 6,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1224
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": 6,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1224
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": 6,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1224
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": 6,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.1224
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 6,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0816
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 40,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.5918
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 50,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.6531
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 73,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.8163
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 6,
+      "detected": "goal_entry_blocked",
+      "position_coverage": 0.0816
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.5306
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.449
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4286
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.4694
+    },
+    {
+      "map": 7,
+      "defect": "unreachable_checkpoint",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.6531
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 0,
+      "time_to_discovery": 203,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.6939
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 1,
+      "time_to_discovery": 18,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2245
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 2,
+      "time_to_discovery": 190,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.6939
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 3,
+      "time_to_discovery": 34,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2245
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "random",
+      "seed": 4,
+      "time_to_discovery": 228,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.7959
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 0,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 1,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 2,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 3,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "scripted",
+      "seed": 4,
+      "time_to_discovery": null,
+      "detected": null,
+      "position_coverage": 0.1429
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 0,
+      "time_to_discovery": 14,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.1837
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 1,
+      "time_to_discovery": 34,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.4898
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 2,
+      "time_to_discovery": 40,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.5102
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 3,
+      "time_to_discovery": 24,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3673
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "coverage",
+      "seed": 4,
+      "time_to_discovery": 40,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.551
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 0,
+      "time_to_discovery": 545,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.4082
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 1,
+      "time_to_discovery": 216,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.3673
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 2,
+      "time_to_discovery": 238,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2245
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 3,
+      "time_to_discovery": 172,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.2857
+    },
+    {
+      "map": 7,
+      "defect": "softlock",
+      "policy": "q_count",
+      "seed": 4,
+      "time_to_discovery": 5,
+      "detected": "legal_move_blocked",
+      "position_coverage": 0.102
+    }
+  ]
+}

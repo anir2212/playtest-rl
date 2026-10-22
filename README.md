@@ -12,9 +12,9 @@ Manual game testing can miss paths that nobody thought to script. An agent may r
 
 | Area | What works today | Next question |
 |---|---|---|
-| Games and agents | Checked GridQuest/Slicer environments, tabular Q-learning, scratch Double DQN/PPO and library references | What changes on unseen levels? |
-| Reward and bug studies | A reward-farming counterexample and a contract oracle for four planted defects | Can the oracle transfer to another game contract? |
-| Training evidence | Separate five-seed 5,120- and 10,240-step endpoints | What does a true checkpoint curve show under a fixed exploration schedule? |
+| Games and agents | Checked GridQuest/Slicer environments, tabular Q-learning, scratch Double DQN/PPO and library references | How do the learning agents do on unseen levels and harder settings? |
+| Reward and bug studies | A reward-farming counterexample and a contract oracle for four planted defects, also evaluated on eight predeclared held-out maps with moved defects | Can the oracle transfer to another game contract? |
+| Training evidence | Separate five-seed 5,120- and 10,240-step endpoints, and five-seed 20,480-step checkpoint curves for scratch Double DQN and PPO with a fixed exploration schedule and a predeclared threshold | A difficulty sweep for the learning agents; library-agent curves are not measured |
 
 ## Run locally
 
@@ -32,6 +32,10 @@ make all
 
 A separate [10,240-step neural run](evidence/neural_10240.json) doubles the earlier interaction budget for the same four agent families and five seed numbers. It starts fresh models and retains every seed row. The DQN endpoints improved in this small game, but exploration schedules also scale with the chosen budget, so these two runs do not form a checkpoint learning curve. The exact scores and intervals are in [Results](RESULTS.md).
 
+`make curve` trains one Double DQN and one PPO model per seed for 20,480 steps and evaluates the same evolving model every 1,024 steps; `make curve-figure` draws [the curve](figures/learning_curve.png) from the committed [evidence](evidence/learning_curve_20480.json). Its 5,120-step checkpoints reproduce the original endpoint run exactly.
+
+`make unseen-protocol` freezes eight seeded held-out GridQuest maps (each with its own key, door, goal, walls and traps), plus the policies, seeds and metrics, in [a protocol file](evidence/unseen_levels_protocol.json), and refuses to overwrite it. `make unseen` refuses to run if the regenerated maps differ, then hunts every defect with every policy on every map and on clean copies. All four policies raised zero false alarms on the clean maps. Detection carried over for the random and coverage policies but fell for the count-bonus policy ([results](evidence/unseen_levels_results.json)).
+
 The playtest comparison now stops when observed movement or score breaks the game's declared rules, without reading the injected defect label. A regression test also fixed the score-overflow scenario so it happens on a repeat coin visit, as intended. The [new 80-run evidence](evidence/playtest_contract_oracle.json) is separate from the earlier labeled-fixture experiment; [Results](RESULTS.md#contract-based-playtesting-18-october-2026) gives both tables and explains the change. The oracle still knows this small game's map and score bound, so unseen-game detection is open.
 
 ## Repository map
@@ -40,4 +44,4 @@ The playtest comparison now stops when observed movement or score breaks the gam
 
 ## Scope
 
-The environments and bug set are authored fixtures. Detection rates here do not estimate performance on commercial games. The comparison figure shows evaluation endpoints rather than a learning curve, and the longer run started fresh agents.
+The environments and bug set are authored fixtures. Detection rates here do not estimate performance on commercial games. The comparison figure shows evaluation endpoints, and the 10,240-step run started fresh agents; the separate checkpoint-curve figure is the learning curve. The held-out maps are generated variations of one small game.
