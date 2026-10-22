@@ -49,7 +49,23 @@ def double_dqn_target(online: QNetwork, target: QNetwork, next_obs, rewards, don
 
 
 def train(seed: int, steps: int = 5000, double: bool = True,
-          bomb_ratio: float = 0.2, batch_size: int = 64):
+          bomb_ratio: float = 0.2, batch_size: int = 64,
+          epsilon_decay_steps: int | None = None,
+          checkpoint_every: int | None = None, on_checkpoint=None):
+    """Train one agent.
+
+    By default epsilon decays over 70% of ``steps`` (the historical endpoint runs).
+    ``epsilon_decay_steps`` fixes the decay to absolute environment steps, so a longer
+    budget does not change early exploration. ``on_checkpoint(step, model)`` is called
+    at step 0 and after every ``checkpoint_every`` steps on the same evolving network.
+    """
+    if (checkpoint_every is None) != (on_checkpoint is None):
+        raise ValueError("checkpoint_every and on_checkpoint must be given together")
+    if checkpoint_every is not None and (checkpoint_every <= 0 or steps % checkpoint_every):
+        raise ValueError("steps must be a positive multiple of checkpoint_every")
+    decay = max(1, int(steps * 0.7)) if epsilon_decay_steps is None else epsilon_decay_steps
+    if decay <= 0:
+        raise ValueError("epsilon_decay_steps must be positive")
     torch.set_num_threads(2)
     torch.manual_seed(seed)
     rng = random.Random(seed)
@@ -60,8 +76,10 @@ def train(seed: int, steps: int = 5000, double: bool = True,
     optimizer = torch.optim.Adam(online.parameters(), lr=5e-4)
     replay = ReplayBuffer(10000)
     returns, episode_return, losses = [], 0.0, []
+    if on_checkpoint is not None:
+        on_checkpoint(0, online)
     for step in range(steps):
-        epsilon = max(0.05, 1.0 - 0.95 * step / max(1, int(steps * 0.7)))
+        epsilon = max(0.05, 1.0 - 0.95 * step / decay)
         if rng.random() < epsilon:
             action = rng.randrange(4)
         else:
@@ -92,9 +110,11 @@ def train(seed: int, steps: int = 5000, double: bool = True,
             returns.append(episode_return)
             episode_return = 0.0
             obs, _ = env.reset(seed=seed * 100000 + step)
+        if on_checkpoint is not None and (step + 1) % checkpoint_every == 0:
+            on_checkpoint(step + 1, online)
     env.close()
     return online, {"train_returns": returns, "mean_loss": float(np.mean(losses)) if losses else None,
-                    "steps": steps, "double": double}
+                    "steps": steps, "double": double, "epsilon_decay_steps": decay}
 
 
 def evaluate(model: QNetwork, seed: int, episodes: int = 30, bomb_ratio: float = 0.2):

@@ -12,6 +12,7 @@ from stable_baselines3.common.vec_env import DummyVecEnv
 
 from agents import q_learning, dqn, ppo
 from analysis.aggregate import mean_ci
+from analysis.curves import PROTOCOL as CURVE_PROTOCOL, run_curve
 from envs.slicer import Slicer
 from playtest.bug_hunt import BUGS, POLICIES, hunt
 
@@ -126,17 +127,23 @@ def run_playtest(seeds: int, max_steps: int):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--suite", choices=("q", "neural", "playtest", "ablations"), required=True)
+    parser.add_argument("--suite", choices=("q", "neural", "playtest", "ablations", "curve"),
+                        required=True)
     parser.add_argument("--seeds", type=int, default=5)
     parser.add_argument("--episodes", type=int, default=500)
-    parser.add_argument("--steps", type=int, default=5120)
+    parser.add_argument("--steps", type=int, default=None,
+                        help="training steps (default 5,120; curve default from its protocol)")
+    parser.add_argument("--checkpoint-every", type=int, default=CURVE_PROTOCOL["checkpoint_every"])
     parser.add_argument("--max-hunt-steps", type=int, default=1200)
     args = parser.parse_args()
+    if args.steps is None:
+        args.steps = CURVE_PROTOCOL["total_steps"] if args.suite == "curve" else 5120
     if args.seeds < 5:
         print("Warning: smoke only; plan calls for at least five seeds.")
     result = (run_q(args.episodes, args.seeds) if args.suite == "q" else
               run_neural(args.steps, args.seeds) if args.suite == "neural" else
               run_ablations(args.steps, args.seeds) if args.suite == "ablations" else
+              run_curve(args.seeds, args.steps, args.checkpoint_every) if args.suite == "curve" else
               run_playtest(args.seeds, args.max_hunt_steps))
     output = ROOT / "runs" / f"{args.suite}.json"
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -148,6 +155,11 @@ def main():
         print(json.dumps(result['summary'], indent=2))
     elif args.suite == "playtest":
         print(json.dumps(result['summary'], indent=2))
+    elif args.suite == "curve":
+        if not result["matches_protocol"]:
+            print("Warning: settings differ from the predeclared curve protocol; not comparable.")
+        print(json.dumps({agent: [(c["step"], round(c["mean_score"]["mean"], 3)) for c in v["curve"]]
+                          for agent, v in result["summary"].items()}))
     else:
         print(json.dumps(result['summary_mean_score'], indent=2))
 

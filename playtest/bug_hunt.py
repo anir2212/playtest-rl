@@ -5,7 +5,7 @@ from collections import defaultdict, deque
 import math
 import random
 
-from envs.gridquest import DIRECTIONS, GridQuest
+from envs.gridquest import DIRECTIONS, GridQuest, Layout
 from playtest.oracle import GameContract, observe_transition
 
 BUGS = ("wall_gap", "score_overflow", "unreachable_checkpoint", "softlock")
@@ -32,11 +32,13 @@ def _scripted_action(env: GridQuest):
     return 0
 
 
-def hunt(bug: str, policy: str, seed: int, max_steps: int = 1200):
-    if bug not in BUGS or policy not in POLICIES:
+def hunt(bug: str | None, policy: str, seed: int, max_steps: int = 1200,
+         layout: Layout | None = None):
+    """Search for a contract violation; ``bug=None`` measures false alarms on a clean map."""
+    if (bug is not None and bug not in BUGS) or policy not in POLICIES:
         raise ValueError("unknown bug or policy")
     rng = random.Random(seed)
-    env = GridQuest(bug=bug)
+    env = GridQuest(bug=bug, layout=layout)
     contract = GameContract(env.size, frozenset(env.wall), env.door_at, env.goal_at)
     state, _ = env.reset(seed=seed)
     seen_positions = {env.position}

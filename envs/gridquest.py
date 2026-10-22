@@ -1,8 +1,14 @@
-"""Small discrete game with key, door, coin, hazard and injected defects."""
+"""Small discrete game with key, door, coin, hazard and injected defects.
+
+A ``Layout`` fixes where everything is, including where two defects live when
+injected. ``default_layout`` reproduces the original fixed map exactly; other
+layouts (for example the held-out maps in ``playtest/levels.py``) reuse the same
+rules, rewards and defect behaviour.
+"""
 from __future__ import annotations
 
 from collections import deque
-import random
+from dataclasses import dataclass
 
 import gymnasium as gym
 from gymnasium import spaces
@@ -10,11 +16,50 @@ from gymnasium import spaces
 DIRECTIONS = ((0, -1), (0, 1), (-1, 0), (1, 0))
 
 
+@dataclass(frozen=True)
+class Layout:
+    size: int
+    start: tuple[int, int]
+    key_at: tuple[int, int]
+    coin_at: tuple[int, int]
+    door_at: tuple[int, int]
+    goal_at: tuple[int, int]
+    walls: frozenset[tuple[int, int]]
+    hazards: frozenset[tuple[int, int]]
+    wall_gap: tuple[int, int]  # Off-map cell the ``wall_gap`` defect lets the player enter.
+    softlock_at: tuple[int, int]  # Cell that traps the player under ``softlock``.
+
+    def to_json(self) -> dict:
+        return {key: (sorted(map(list, value)) if isinstance(value, frozenset) else
+                      list(value) if isinstance(value, tuple) else value)
+                for key, value in self.__dict__.items()}
+
+    @classmethod
+    def from_json(cls, data: dict) -> Layout:
+        cells = {"walls", "hazards"}
+        return cls(**{key: (frozenset(tuple(cell) for cell in value) if key in cells else
+                            tuple(value) if isinstance(value, list) else value)
+                      for key, value in data.items()})
+
+
+def default_layout(size: int = 6, difficulty: int = 0) -> Layout:
+    """The original hand-built map used by every earlier experiment."""
+    return Layout(size=size, start=(0, 0), key_at=(0, size - 1), coin_at=(size // 2, 0),
+                  door_at=(size - 2, size - 1), goal_at=(size - 1, size - 1),
+                  walls=frozenset({(2, 2), (2, 3)}),
+                  hazards=frozenset({(size - 2, 1), (2, size - 2)} if difficulty
+                                    else {(size - 2, 1)}),
+                  wall_gap=(-1, 2), softlock_at=(size - 2, 0))
+
+
 class GridQuest(gym.Env):
     metadata = {"render_modes": ["ansi"]}
 
     def __init__(self, size: int = 6, difficulty: int = 0, bug: str | None = None,
-                 reward_mode: str = "sparse", render_mode: str | None = None):
+                 reward_mode: str = "sparse", render_mode: str | None = None,
+                 layout: Layout | None = None):
+        if layout is not None:
+            size = layout.size
         if size < 6 or difficulty not in (0, 1, 2):
             raise ValueError("size >= 6 and difficulty in 0..2 required")
         if bug not in (None, "wall_gap", "score_overflow", "unreachable_checkpoint", "softlock"):
@@ -27,12 +72,14 @@ class GridQuest(gym.Env):
         self.action_space = spaces.Discrete(4)
         self.observation_space = spaces.Discrete((size + 2) ** 2 * 4)
         self.max_steps = size * size * (3 - difficulty // 2)
-        self.key_at = (0, size - 1)
-        self.coin_at = (size // 2, 0)
-        self.door_at = (size - 2, size - 1)
-        self.goal_at = (size - 1, size - 1)
-        self.hazards = {(size - 2, 1), (2, size - 2)} if difficulty else {(size - 2, 1)}
-        self.wall = {(2, 2), (2, 3)}
+        self.layout = layout or default_layout(size, difficulty)
+        self.start = self.layout.start
+        self.key_at = self.layout.key_at
+        self.coin_at = self.layout.coin_at
+        self.door_at = self.layout.door_at
+        self.goal_at = self.layout.goal_at
+        self.hazards = set(self.layout.hazards)
+        self.wall = set(self.layout.walls)
         self.reset()
 
     def _obs(self) -> int:
@@ -46,7 +93,7 @@ class GridQuest(gym.Env):
 
     def reset(self, *, seed: int | None = None, options: dict | None = None):
         super().reset(seed=seed)
-        self.position = (0, 0)
+        self.position = self.start
         self.key = False
         self.coin = False
         self.steps = 0
@@ -66,7 +113,7 @@ class GridQuest(gym.Env):
         bug_detected = None
         if self.stuck:
             bug_detected = "softlock"
-        elif self.bug == "wall_gap" and (nx, ny) == (-1, 2):
+        elif self.bug == "wall_gap" and (nx, ny) == self.layout.wall_gap:
             self.position = (nx, ny)
             bug_detected = "wall_gap"
         elif (0 <= nx < self.size and 0 <= ny < self.size and
@@ -80,7 +127,7 @@ class GridQuest(gym.Env):
         if self.position == self.coin_at and not self.coin:
             self.coin = True
             self.score += 1
-        if self.bug == "softlock" and self.position == (self.size - 2, 0):
+        if self.bug == "softlock" and self.position == self.layout.softlock_at:
             self.stuck = True
         if self.bug == "score_overflow" and had_coin and self.position == self.coin_at:
             self.score = 1_000_000
@@ -105,7 +152,7 @@ class GridQuest(gym.Env):
     def _reachable_goal(self) -> bool:
         if self.bug == "unreachable_checkpoint":
             return False
-        queue = deque([(0, 0, False)])
+        queue = deque([(*self.start, self.start == self.key_at)])
         seen = set(queue)
         while queue:
             x, y, key = queue.popleft()

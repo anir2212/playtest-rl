@@ -1,6 +1,7 @@
 """Rebuild evidence-linked learning and exploration figures."""
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 
@@ -12,7 +13,44 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def main():
+def curve_figure(evidence: Path, output: Path):
+    """Plot checkpoint score against environment steps with seed-level 95% intervals."""
+    data = json.loads(evidence.read_text())
+    if not data.get("matches_protocol"):
+        raise ValueError(f"{evidence} does not match the predeclared curve protocol")
+    fig, axis = plt.subplots(figsize=(7.5, 4.2), constrained_layout=True)
+    colors = {"double_dqn": "#247ba0", "scratch_ppo": "#e4572e"}
+    for agent, summary in data["summary"].items():
+        steps = [c["step"] for c in summary["curve"]]
+        means = [c["mean_score"]["mean"] for c in summary["curve"]]
+        low = [c["mean_score"]["ci95"][0] for c in summary["curve"]]
+        high = [c["mean_score"]["ci95"][1] for c in summary["curve"]]
+        label = f"{agent.replace('_', ' ')} ({summary['seeds']} seeds)"
+        axis.plot(steps, means, marker="o", color=colors.get(agent), label=label)
+        axis.fill_between(steps, low, high, color=colors.get(agent), alpha=0.18)
+    axis.axhline(data["protocol"]["threshold"], color="grey", linestyle="--", linewidth=1,
+                 label=f"predeclared threshold {data['protocol']['threshold']:g}")
+    axis.set_xlabel("Environment interactions (training steps)")
+    axis.set_ylabel("Slicer fruit score / 80-step episode")
+    axis.set_title("Checkpoint learning curves; band = 95% bootstrap over seed means")
+    axis.legend(loc="upper left", fontsize=8)
+    source = evidence.relative_to(ROOT) if evidence.is_relative_to(ROOT) else evidence
+    axis.text(0.99, 0.02, f"source: {source}", transform=axis.transAxes,
+              ha="right", va="bottom", fontsize=7, color="grey")
+    fig.savefig(output, dpi=180)
+    plt.close(fig)
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--curve", type=Path, help="draw only the checkpoint curve from this JSON")
+    args = parser.parse_args(argv)
+    if args.curve:
+        path = args.curve if args.curve.is_absolute() else ROOT / args.curve
+        (ROOT / "figures").mkdir(exist_ok=True)
+        curve_figure(path, ROOT / "figures" / "learning_curve.png")
+        print("curve figure written")
+        return
     runs, figures = ROOT / "runs", ROOT / "figures"
     figures.mkdir(exist_ok=True)
     q = json.loads((runs / "q.json").read_text())

@@ -1,0 +1,515 @@
+{
+  "name": "gridquest-unseen-levels-v1",
+  "level_seed": 20261020,
+  "level_count": 8,
+  "sizes": [
+    6,
+    7,
+    8
+  ],
+  "policies": [
+    "random",
+    "scripted",
+    "coverage",
+    "q_count"
+  ],
+  "defects": [
+    "wall_gap",
+    "score_overflow",
+    "unreachable_checkpoint",
+    "softlock"
+  ],
+  "hunt_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "max_steps": 1200,
+  "primary_metrics": [
+    "detections out of maps x seeds (40) per defect and policy, with a Wilson 95% interval",
+    "mean and median discovery step among detections only; misses right-censored at 1200",
+    "false alarms on the clean copy of every map, per policy (any nonzero count is an oracle failure to report, not to tune away)"
+  ],
+  "comparison": "Descriptive only: the original-map contract run (5 seeds, one map) in evidence/playtest_contract_oracle.json. No significance test; the original map was the development map for every policy.",
+  "tuning": "None. Policies, oracle and budget are frozen as of this protocol.",
+  "written_at_utc": "2026-10-20T10:55:50+00:00",
+  "levels": {
+    "generator": "unseen-v1",
+    "seed": 20261020,
+    "count": 8,
+    "levels": [
+      {
+        "size": 6,
+        "start": [
+          4,
+          5
+        ],
+        "key_at": [
+          1,
+          2
+        ],
+        "coin_at": [
+          1,
+          3
+        ],
+        "door_at": [
+          3,
+          3
+        ],
+        "goal_at": [
+          3,
+          2
+        ],
+        "walls": [
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "hazards": [
+          [
+            1,
+            5
+          ]
+        ],
+        "wall_gap": [
+          6,
+          2
+        ],
+        "softlock_at": [
+          0,
+          5
+        ]
+      },
+      {
+        "size": 7,
+        "start": [
+          5,
+          5
+        ],
+        "key_at": [
+          6,
+          3
+        ],
+        "coin_at": [
+          0,
+          1
+        ],
+        "door_at": [
+          4,
+          6
+        ],
+        "goal_at": [
+          5,
+          6
+        ],
+        "walls": [
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            0
+          ]
+        ],
+        "hazards": [
+          [
+            0,
+            4
+          ]
+        ],
+        "wall_gap": [
+          5,
+          7
+        ],
+        "softlock_at": [
+          6,
+          4
+        ]
+      },
+      {
+        "size": 8,
+        "start": [
+          6,
+          5
+        ],
+        "key_at": [
+          4,
+          6
+        ],
+        "coin_at": [
+          5,
+          3
+        ],
+        "door_at": [
+          5,
+          0
+        ],
+        "goal_at": [
+          4,
+          0
+        ],
+        "walls": [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "hazards": [
+          [
+            0,
+            0
+          ]
+        ],
+        "wall_gap": [
+          0,
+          -1
+        ],
+        "softlock_at": [
+          5,
+          5
+        ]
+      },
+      {
+        "size": 6,
+        "start": [
+          5,
+          2
+        ],
+        "key_at": [
+          0,
+          2
+        ],
+        "coin_at": [
+          1,
+          3
+        ],
+        "door_at": [
+          2,
+          3
+        ],
+        "goal_at": [
+          2,
+          2
+        ],
+        "walls": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            3
+          ]
+        ],
+        "hazards": [
+          [
+            0,
+            4
+          ]
+        ],
+        "wall_gap": [
+          -1,
+          3
+        ],
+        "softlock_at": [
+          2,
+          1
+        ]
+      },
+      {
+        "size": 7,
+        "start": [
+          1,
+          4
+        ],
+        "key_at": [
+          4,
+          3
+        ],
+        "coin_at": [
+          2,
+          3
+        ],
+        "door_at": [
+          3,
+          4
+        ],
+        "goal_at": [
+          2,
+          4
+        ],
+        "walls": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "hazards": [
+          [
+            2,
+            1
+          ]
+        ],
+        "wall_gap": [
+          7,
+          4
+        ],
+        "softlock_at": [
+          4,
+          1
+        ]
+      },
+      {
+        "size": 8,
+        "start": [
+          5,
+          6
+        ],
+        "key_at": [
+          2,
+          5
+        ],
+        "coin_at": [
+          4,
+          3
+        ],
+        "door_at": [
+          7,
+          4
+        ],
+        "goal_at": [
+          6,
+          4
+        ],
+        "walls": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            6,
+            3
+          ]
+        ],
+        "hazards": [
+          [
+            4,
+            7
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "wall_gap": [
+          8,
+          7
+        ],
+        "softlock_at": [
+          3,
+          3
+        ]
+      },
+      {
+        "size": 6,
+        "start": [
+          5,
+          2
+        ],
+        "key_at": [
+          0,
+          4
+        ],
+        "coin_at": [
+          2,
+          3
+        ],
+        "door_at": [
+          0,
+          0
+        ],
+        "goal_at": [
+          0,
+          1
+        ],
+        "walls": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "hazards": [
+          [
+            5,
+            5
+          ]
+        ],
+        "wall_gap": [
+          3,
+          -1
+        ],
+        "softlock_at": [
+          3,
+          0
+        ]
+      },
+      {
+        "size": 7,
+        "start": [
+          4,
+          5
+        ],
+        "key_at": [
+          5,
+          3
+        ],
+        "coin_at": [
+          1,
+          2
+        ],
+        "door_at": [
+          5,
+          5
+        ],
+        "goal_at": [
+          6,
+          5
+        ],
+        "walls": [
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            6
+          ]
+        ],
+        "hazards": [
+          [
+            2,
+            5
+          ]
+        ],
+        "wall_gap": [
+          7,
+          4
+        ],
+        "softlock_at": [
+          5,
+          2
+        ]
+      }
+    ],
+    "sha256": "56c38f872a5e82ce8eb9f8b6b747e04ed18f78c7fb4aeaa3da487d8c3e7a049f"
+  },
+  "baseline_sha256": "82f9d97f1d69678c4cc91f661f45152e242fd26bee2553efe8143297b67948aa"
+}

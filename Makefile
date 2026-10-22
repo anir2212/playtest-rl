@@ -1,7 +1,7 @@
 PYTHON ?= .venv/bin/python
 export MPLCONFIGDIR := $(CURDIR)/.mplconfig
 export OMP_NUM_THREADS := 2
-.PHONY: test q neural playtest ablations figures all
+.PHONY: test q neural playtest ablations curve curve-figure unseen-protocol unseen figures all
 all: q neural playtest ablations figures
 test:
 	$(PYTHON) -m pytest -q
@@ -13,5 +13,13 @@ playtest:
 	$(PYTHON) -m experiments.run --suite playtest --seeds 5 --max-hunt-steps 1200
 ablations:
 	$(PYTHON) -m experiments.run --suite ablations --seeds 5 --steps 5120
+curve:
+	$(PYTHON) -m experiments.run --suite curve --seeds 5
+curve-figure:
+	$(PYTHON) -m analysis.figures --curve evidence/learning_curve_20480.json
+unseen-protocol:
+	$(PYTHON) -m playtest.unseen --write-protocol
+unseen:
+	$(PYTHON) -m playtest.unseen --run
 figures:
 	$(PYTHON) -m analysis.figures

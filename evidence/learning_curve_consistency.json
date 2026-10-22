@@ -1,0 +1,137 @@
+{
+  "curve_file": "evidence/learning_curve_20480.json",
+  "checks": [
+    {
+      "endpoint_file": "evidence/neural.json",
+      "agent": "double_dqn",
+      "step": 5120,
+      "pairs": [
+        {
+          "seed": 0,
+          "curve": 1.5666666666666667,
+          "endpoint": 1.5666666666666667
+        },
+        {
+          "seed": 1,
+          "curve": 4.5,
+          "endpoint": 4.5
+        },
+        {
+          "seed": 2,
+          "curve": 2.2,
+          "endpoint": 2.2
+        },
+        {
+          "seed": 3,
+          "curve": 3.7666666666666666,
+          "endpoint": 3.7666666666666666
+        },
+        {
+          "seed": 4,
+          "curve": 5.533333333333333,
+          "endpoint": 5.533333333333333
+        }
+      ],
+      "identical": true
+    },
+    {
+      "endpoint_file": "evidence/neural.json",
+      "agent": "scratch_ppo",
+      "step": 5120,
+      "pairs": [
+        {
+          "seed": 0,
+          "curve": 1.4,
+          "endpoint": 1.4
+        },
+        {
+          "seed": 1,
+          "curve": 1.9666666666666666,
+          "endpoint": 1.9666666666666666
+        },
+        {
+          "seed": 2,
+          "curve": 1.6,
+          "endpoint": 1.6
+        },
+        {
+          "seed": 3,
+          "curve": 1.9333333333333333,
+          "endpoint": 1.9333333333333333
+        },
+        {
+          "seed": 4,
+          "curve": 2.1,
+          "endpoint": 2.1
+        }
+      ],
+      "identical": true
+    },
+    {
+      "endpoint_file": "evidence/neural_10240.json",
+      "agent": "double_dqn",
+      "step": 10240,
+      "pairs": [
+        {
+          "seed": 0,
+          "curve": 7.366666666666666,
+          "endpoint": 7.0
+        },
+        {
+          "seed": 1,
+          "curve": 4.866666666666666,
+          "endpoint": 4.933333333333334
+        },
+        {
+          "seed": 2,
+          "curve": 2.6666666666666665,
+          "endpoint": 7.133333333333334
+        },
+        {
+          "seed": 3,
+          "curve": 7.9,
+          "endpoint": 7.333333333333333
+        },
+        {
+          "seed": 4,
+          "curve": 6.8,
+          "endpoint": 6.766666666666667
+        }
+      ],
+      "identical": false
+    },
+    {
+      "endpoint_file": "evidence/neural_10240.json",
+      "agent": "scratch_ppo",
+      "step": 10240,
+      "pairs": [
+        {
+          "seed": 0,
+          "curve": 0.43333333333333335,
+          "endpoint": 0.43333333333333335
+        },
+        {
+          "seed": 1,
+          "curve": 1.5666666666666667,
+          "endpoint": 1.5666666666666667
+        },
+        {
+          "seed": 2,
+          "curve": 1.6,
+          "endpoint": 1.6
+        },
+        {
+          "seed": 3,
+          "curve": 1.6666666666666667,
+          "endpoint": 1.6666666666666667
+        },
+        {
+          "seed": 4,
+          "curve": 2.033333333333333,
+          "endpoint": 2.033333333333333
+        }
+      ],
+      "identical": true
+    }
+  ]
+}
