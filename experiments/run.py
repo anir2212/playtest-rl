@@ -58,8 +58,9 @@ def run_ablations(steps: int, seeds: int):
     return {"rows": rows, "summary_mean_score": summary, "steps": ppo_steps}
 
 
-def eval_sb3(model, seed: int, episodes: int = 30):
-    env = Slicer()
+def eval_sb3(model, seed: int, episodes: int = 30, bomb_ratio: float = 0.2, speed: float = 1.0):
+    """Greedy SB3 evaluation; the defaults are the original Slicer used by every endpoint run."""
+    env = Slicer(bomb_ratio=bomb_ratio, speed=speed)
     scores, bombs, returns = [], [], []
     for ep in range(episodes):
         obs, _ = env.reset(seed=seed * 100000 + ep)

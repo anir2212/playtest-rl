@@ -2,7 +2,8 @@ PYTHON ?= .venv/bin/python
 export MPLCONFIGDIR := $(CURDIR)/.mplconfig
 export OMP_NUM_THREADS := 2
 DIFFICULTY_WORKERS ?= 4
-.PHONY: test q neural playtest ablations curve curve-figure unseen-protocol unseen difficulty-protocol difficulty difficulty-figure figures all
+SB3_WORKERS ?= 4
+.PHONY: test q neural playtest ablations curve curve-figure unseen-protocol unseen difficulty-protocol difficulty difficulty-figure sb3-protocol sb3 defect-protocol defect figures all
 all: q neural playtest ablations figures
 test:
 	$(PYTHON) -m pytest -q
@@ -28,5 +29,13 @@ difficulty:
 	$(PYTHON) -m analysis.difficulty --run --workers $(DIFFICULTY_WORKERS)
 difficulty-figure:
 	$(PYTHON) -m analysis.figures --difficulty evidence/slicer_difficulty_20480.json
+sb3-protocol:
+	$(PYTHON) -m analysis.sb3_reference --write-protocol
+sb3:
+	$(PYTHON) -m analysis.sb3_reference --run --workers $(SB3_WORKERS)
+defect-protocol:
+	$(PYTHON) -m playtest.new_defect --write-protocol
+defect:
+	$(PYTHON) -m playtest.new_defect --run
 figures:
 	$(PYTHON) -m analysis.figures

@@ -62,7 +62,8 @@ class GridQuest(gym.Env):
             size = layout.size
         if size < 6 or difficulty not in (0, 1, 2):
             raise ValueError("size >= 6 and difficulty in 0..2 required")
-        if bug not in (None, "wall_gap", "score_overflow", "unreachable_checkpoint", "softlock"):
+        if bug not in (None, "wall_gap", "score_overflow", "unreachable_checkpoint", "softlock",
+                       "coin_not_scored"):
             raise ValueError("unknown bug")
         if reward_mode not in ("sparse", "shaped", "hackable", "fixed"):
             raise ValueError("unknown reward mode")
@@ -126,7 +127,11 @@ class GridQuest(gym.Env):
             self.key = True
         if self.position == self.coin_at and not self.coin:
             self.coin = True
-            self.score += 1
+            if self.bug == "coin_not_scored":
+                # Added 23 October 2026: the coin is taken but its point is never added.
+                bug_detected = "coin_not_scored"
+            else:
+                self.score += 1
         if self.bug == "softlock" and self.position == self.layout.softlock_at:
             self.stuck = True
         if self.bug == "score_overflow" and had_coin and self.position == self.coin_at:

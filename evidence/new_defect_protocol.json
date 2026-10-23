@@ -1,0 +1,49 @@
+{
+  "name": "gridquest-new-defect-v1",
+  "declared": "2026-10-23, before any hunt on the new defect",
+  "defect": "coin_not_scored",
+  "defect_description": "Entering the coin tile for the first time in an episode sets the coin flag but does not add the declared 1 point. Every later score stays inside the declared 0-11 range, so it is a plausible but wrong value rather than an out-of-range one.",
+  "why_this_defect": "Each earlier defect moves the player illegally, blocks a legal move or pushes the score out of range. This one does none of those. The frozen v1 contract checks bounds, the score range and movement legality, so it was not written around this defect.",
+  "maps": {
+    "default": "the original GridQuest map (default_layout, size 6), the development map for every policy",
+    "held_out": "the eight frozen gridquest-unseen-v1 maps, read from evidence/unseen_levels_protocol.json and regenerated; the run refuses if their SHA-256 differs. The coin is already placed differently on each map."
+  },
+  "policies": [
+    "random",
+    "scripted",
+    "coverage",
+    "q_count"
+  ],
+  "hunt_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "max_steps": 1200,
+  "oracles": {
+    "v1": "playtest/oracle.observe_transition, unchanged since 18 October: out of bounds, score outside 0-11, blocked legal move or goal entry, illegal move",
+    "v2": "playtest/oracle.check_transition, new: predicts position, key, coin and score after each move from the map's declared size, walls, door, key, coin and goal and the declared scoring (coin 1 point, goal 10 points), then compares them with the reported state. It was written in the same session as the defect, so it is not a blind test; v1 is the blind test."
+  },
+  "prediction": "From reading the code before any hunt: v1 detects 0 of 45 hunts per policy, because the coin point is the only change and the score stays in range. v2 flags score_mismatch at the first coin entry. Reported whatever happens.",
+  "detection_rule": "A hunt detects the defect at the first step where the oracle reports any violation on the defective map. Misses are right-censored at 1,200 steps and never given a discovery time. The violation kind is reported; a kind other than score_mismatch under v2 still counts as a detection and is listed.",
+  "metrics": [
+    "detections out of 5 (default map) and out of 40 (8 held-out maps x 5 seeds) per policy and oracle, with a Wilson 95% interval",
+    "mean and median discovery step among detections only; number censored",
+    "false alarms on a clean copy of every map, per policy and oracle, out of 5 and 40"
+  ],
+  "reading_rules": [
+    "Any v2 false alarm on a clean map is an oracle failure: it is reported, and v2's detections on that map set are not presented as clean evidence.",
+    "A nonzero v1 detection count means the prediction was wrong and is reported as such.",
+    "Policy differences are descriptive; no significance test is made."
+  ],
+  "consistency_check": "The v1 clean-copy rows on the held-out maps must equal the clean rows in evidence/unseen_levels_results.json (discovery step, violation and coverage), which shows the harness change left v1 hunts unchanged.",
+  "tuning": "None. Defect, maps, policies, oracles, seeds and budget are frozen by this protocol; misses are reported, not re-run.",
+  "written_at_utc": "2026-10-23T10:48:12+00:00",
+  "frozen_inputs_sha256": {
+    "unseen_protocol": "7d394067e1bd02054ab8c3c0ec90e3e489ed4743864df5c988343d0b601c69ee",
+    "unseen_results": "3a6c3ec1edafa406dadea6d6c006ea6faf7a3edead32c99b073d6dd24f5d56a7",
+    "original_map_contract_run": "82f9d97f1d69678c4cc91f661f45152e242fd26bee2553efe8143297b67948aa"
+  }
+}
