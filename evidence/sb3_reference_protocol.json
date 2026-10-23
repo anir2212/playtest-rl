@@ -1,0 +1,127 @@
+{
+  "name": "slicer-sb3-reference-v1",
+  "declared": "2026-10-23, before any SB3 model was checkpointed, trained for 20,480 steps or evaluated on a held-out setting",
+  "agents": [
+    "sb3_dqn",
+    "sb3_ppo"
+  ],
+  "hyperparameters": {
+    "sb3_dqn": {
+      "learning_rate": 0.0005,
+      "buffer_size": 10000,
+      "learning_starts": 100,
+      "batch_size": 64,
+      "train_freq": 4,
+      "gradient_steps": 1,
+      "target_update_interval": 250,
+      "exploration_initial_eps": 1.0,
+      "exploration_final_eps": 0.05,
+      "gamma": 0.99
+    },
+    "sb3_ppo": {
+      "learning_rate": 0.0003,
+      "n_steps": 128,
+      "batch_size": 128,
+      "n_epochs": 4,
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "clip_range": 0.2,
+      "ent_coef": 0.01
+    }
+  },
+  "hyperparameter_source": "Identical to the SB3 references in experiments/run.py run_neural (MlpPolicy, cpu, seed = training seed, PPO on 4 DummyVecEnv copies), except that DQN's exploration fraction is set from absolute steps as below. Nothing is tuned.",
+  "training_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "total_steps": 20480,
+  "checkpoint_every": 1024,
+  "dqn_epsilon_decay_steps": 3584,
+  "sb3_dqn_exploration_fraction": 0.175,
+  "epsilon_rule": "SB3 defines exploration_fraction against total_timesteps, so it is set to 3,584 / 20,480 = 0.175: epsilon falls from 1.0 to 0.05 over the same 3,584 absolute steps as the scratch curve and the 5,120-step endpoint run (0.7 x 5,120). PPO has no budget-dependent schedule.",
+  "ppo_rollout_steps": 512,
+  "checkpoint_rule": "A stable_baselines3 callback evaluates the model at the start of every rollout whose num_timesteps is a multiple of 1,024 (after all gradient updates for earlier steps, as in the scratch trainers) and once more after learn() returns: 21 checkpoints at 0, 1,024, ..., 20,480 on the same evolving model. Evaluation is greedy (predict deterministic=True), which draws no training random numbers.",
+  "training_setting": "train",
+  "settings": {
+    "train": {
+      "bomb_ratio": 0.2,
+      "speed": 1.0
+    },
+    "no_bombs": {
+      "bomb_ratio": 0.0,
+      "speed": 1.0
+    },
+    "slow_0.7": {
+      "bomb_ratio": 0.2,
+      "speed": 0.7
+    },
+    "bombs_0.4": {
+      "bomb_ratio": 0.4,
+      "speed": 1.0
+    },
+    "bombs_0.6": {
+      "bomb_ratio": 0.6,
+      "speed": 1.0
+    },
+    "fast_1.3": {
+      "bomb_ratio": 0.2,
+      "speed": 1.3
+    },
+    "fast_1.6": {
+      "bomb_ratio": 0.2,
+      "speed": 1.6
+    },
+    "bombs_0.4_fast_1.3": {
+      "bomb_ratio": 0.4,
+      "speed": 1.3
+    }
+  },
+  "held_out": [
+    "no_bombs",
+    "slow_0.7",
+    "bombs_0.4",
+    "bombs_0.6",
+    "fast_1.3",
+    "fast_1.6",
+    "bombs_0.4_fast_1.3"
+  ],
+  "settings_source": "Copied unchanged from slicer-difficulty-v1; held-out settings choose nothing.",
+  "eval_episodes": 30,
+  "curve_eval_seed_base": 1000,
+  "eval_seed_base": 7000,
+  "eval_seed_rule": "Curve: 1000 + training seed on the default setting at every checkpoint, the scratch curve's 30 episodes. Held-out evaluation: 7000 + training seed on every setting, the scratch difficulty run's episodes. Episode e resets with seed (base + training seed) * 100000 + e.",
+  "anchors": "Random and scripted anchors recomputed with analysis.difficulty.evaluate_anchor on the same episodes; they must equal the anchors in evidence/slicer_difficulty_20480.json.",
+  "primary_metrics": [
+    "Curve: per-seed mean fruit score at each of the 21 checkpoints (evaluation seed 1000 + s), five-seed mean with the seed-level bootstrap 95% interval; mean bomb hits alongside.",
+    "Curve: first checkpoint at or above mean fruit score 5.0 per seed; seeds that never reach it are right-censored at 20,480 and never assigned that step.",
+    "Held-out: per-seed mean fruit score at 20,480 steps for the default-trained models on each setting (evaluation seed 7000 + s), seed bootstrap interval, bomb hits alongside."
+  ],
+  "secondary_metrics": [
+    "anchor-normalized score and transfer gap (in-setting reference minus default-trained model) exactly as in slicer-difficulty-v1",
+    "implementation gap = SB3 mean minus scratch twin mean at 20,480 steps (sb3_dqn vs double_dqn, sb3_ppo vs scratch_ppo), on the curve episodes and on every setting for the default-trained models, with the same 2,000-resample bootstrap over the two five-seed groups; scratch values are read from the committed evidence",
+    "mean episode return reported beside fruit score, descriptive only",
+    "held-out score at every checkpoint, descriptive only; no checkpoint is selected"
+  ],
+  "decision_rules": {
+    "transfer_gap": "'transfer loss' if the 95% interval lies above 0, 'transfer gain' if below 0, otherwise 'no measurable difference' (not evidence of equivalence with five seeds)",
+    "implementation_gap": "'SB3 higher' if the 95% interval lies above 0, 'scratch higher' if below 0, otherwise 'no measurable difference'. Descriptive: network layout, time-limit bootstrapping and optimizer details differ between the implementations."
+  },
+  "consistency_predictions": [
+    "The 5,120-step checkpoint equals the independently trained 5,120-step SB3 endpoint in evidence/neural.json seed for seed, for both agents (same seeds, hyperparameters and a 3,584-step epsilon decay).",
+    "SB3 PPO's 10,240-step checkpoint equals evidence/neural_10240.json seed for seed.",
+    "SB3 DQN's 10,240-step checkpoint differs from evidence/neural_10240.json, because that run decayed epsilon over 0.7 x 10,240 = 7,168 steps.",
+    "A failed prediction is reported as a finding about the callback path; nothing is re-run or changed because of it."
+  ],
+  "tuning": "None. Agents, hyperparameters, settings, seeds, budget, anchors, metrics and reading rules are frozen by this protocol; failures are reported, not re-run.",
+  "written_at_utc": "2026-10-23T10:45:43+00:00",
+  "frozen_inputs_sha256": {
+    "curve_evidence": "48d9ea68437de3490c2f6c1e1d003732984539bea8d4ddeeb22a148f53a435b7",
+    "difficulty_protocol": "f99094922add008f3f8e230641b19709e03be72cacca7279d7a0d7dc3be22275",
+    "difficulty_evidence": "3c2b955c146f049ac243fc721ec63f2d4c61174756645f613657283850a8eb97",
+    "endpoint_5120": "81c2d8697e82c71c2baa6da7ac46000b836cc056e4b271f6c3e2b5a5ca236468",
+    "endpoint_10240": "3e0c43b73a6331aab6e7c0a06f3ef5b6da3e79751daba00c47bc0a98167f12f2"
+  }
+}

@@ -6,10 +6,14 @@ import math
 import random
 
 from envs.gridquest import DIRECTIONS, GridQuest, Layout
-from playtest.oracle import GameContract, observe_transition
+from playtest.oracle import (GameContract, GameRules, check_transition, observe_transition,
+                             public_state)
 
 BUGS = ("wall_gap", "score_overflow", "unreachable_checkpoint", "softlock")
 POLICIES = ("random", "scripted", "coverage", "q_count")
+# Defects added after the frozen protocols; kept out of BUGS so earlier runs are unchanged.
+NEW_DEFECTS = ("coin_not_scored",)
+ORACLES = ("v1", "v2")
 
 
 def _scripted_action(env: GridQuest):
@@ -33,14 +37,22 @@ def _scripted_action(env: GridQuest):
 
 
 def hunt(bug: str | None, policy: str, seed: int, max_steps: int = 1200,
-         layout: Layout | None = None):
-    """Search for a contract violation; ``bug=None`` measures false alarms on a clean map."""
-    if (bug is not None and bug not in BUGS) or policy not in POLICIES:
+         layout: Layout | None = None, oracle: str = "v1"):
+    """Search for a contract violation; ``bug=None`` measures false alarms on a clean map.
+
+    ``oracle="v1"`` is the frozen movement/score-range contract used by every earlier
+    protocol; ``"v2"`` checks the whole public state against the declared rules.
+    """
+    if (bug is not None and bug not in BUGS + NEW_DEFECTS) or policy not in POLICIES:
         raise ValueError("unknown bug or policy")
+    if oracle not in ORACLES:
+        raise ValueError("unknown oracle")
     rng = random.Random(seed)
     env = GridQuest(bug=bug, layout=layout)
     contract = GameContract(env.size, frozenset(env.wall), env.door_at, env.goal_at)
-    state, _ = env.reset(seed=seed)
+    rules = GameRules.from_layout(env.layout)
+    state, info = env.reset(seed=seed)
+    public = public_state(info)
     seen_positions = {env.position}
     visits = defaultdict(int)
     visits[env.position] = 1
@@ -65,14 +77,17 @@ def hunt(bug: str | None, policy: str, seed: int, max_steps: int = 1200,
             intrinsic = 1 / math.sqrt(visits[env.position])
             q[state][action] += 0.3 * (intrinsic + (0 if terminated or truncated else 0.95 * max(q[next_state])) - q[state][action])
         state = next_state
-        violation = observe_transition(contract, before_position, before_key, action, info)
+        violation = (observe_transition(contract, before_position, before_key, action, info)
+                     if oracle == "v1" else check_transition(rules, public, action, info))
+        public = public_state(info)
         if violation:
             return {"time_to_discovery": tick, "detected": violation,
                     "position_coverage": len(seen_positions) / env.size ** 2,
                     "position_visits": [[visits[(x, y)] for x in range(env.size)]
                                         for y in range(env.size)]}
         if terminated or truncated:
-            state, _ = env.reset(seed=seed * 100000 + tick)
+            state, info = env.reset(seed=seed * 100000 + tick)
+            public = public_state(info)
             seen_positions.add(env.position)
     return {"time_to_discovery": None, "detected": None,
             "position_coverage": len(seen_positions) / env.size ** 2,
