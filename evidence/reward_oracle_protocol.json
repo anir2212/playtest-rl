@@ -1,0 +1,90 @@
+{
+  "name": "gridquest-reward-oracle-v1",
+  "declared": "2026-11-06, before any hunt or injected-defect run of contract v3",
+  "question": "Does contract v3 report the known reward fault without new false alarms and without losing any detection that the frozen v2 contract makes?",
+  "oracles": {
+    "v2": "playtest/oracle.check_transition through the frozen playtest/bug_hunt.hunt(oracle='v2'). Baseline and control; its code does not change.",
+    "v3": "playtest/reward_oracle.check_transition_v3 through playtest/reward_oracle.hunt_v3. It calls the unchanged v2 check first and returns any v2 violation. If the state is correct, it compares the returned reward with the declared table and reports reward_mismatch outside an absolute tolerance of 1e-9. It reads neither info['success'] nor info['bug_detected']."
+  },
+  "declared_reward_table": {
+    "scored_mode": "sparse, the only mode the hunt uses and the only mode in which the fault fires",
+    "sparse": "1.0 on entering the goal with the key, otherwise -0.01; -0.05 added when the resulting position is a hazard",
+    "other_modes_unit_tested_only": "shaped and fixed add 0.2 when the key is first acquired; hackable adds 0.2 on each entry to the key tile. No hunt scores these modes.",
+    "source": "Transcribed from the clean reward branch of GridQuest.step in envs/gridquest.py. The earlier docs state the goal payment of 1.0 and a per-step cost in words; the -0.01 and -0.05 values appear only in that code. The table is therefore a reference model of the author's own game, not an external specification."
+  },
+  "defects": {
+    "reward_fault": "goal_reward_missing",
+    "earlier_catalogue": [
+      "wall_gap",
+      "score_overflow",
+      "unreachable_checkpoint",
+      "softlock",
+      "coin_not_scored"
+    ],
+    "clean": "a clean copy of every map, policy and seed, for false alarms"
+  },
+  "maps": {
+    "default": "default_layout(), size 6",
+    "held_out": "the eight frozen gridquest-unseen-v1 maps, read from evidence/unseen_levels_protocol.json and regenerated through playtest.new_defect.held_out_layouts, which refuses if their hash differs"
+  },
+  "policies": [
+    "random",
+    "scripted",
+    "coverage",
+    "q_count"
+  ],
+  "hunt_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "max_steps": 1200,
+  "denominators": "Each oracle and condition has 180 hunts: 4 policies x 45 map/seed pairs, that is 5 default-map and 40 held-out hunts per policy. Seven conditions x two oracles = 2,520 hunts.",
+  "hunt_rule": "Run every condition, oracle, map, policy and seed once. A violation stops the hunt and counts as detection. A miss is right-censored at 1,200 steps, has no discovery time and is never re-run.",
+  "exposure_measure": "hunt_v3 records first_success_step, the first step reporting info['success']. Under goal_reward_missing every successful goal entry is an exposure of the fault. This field is a measurement only and never feeds the oracle. It separates a hunter that never reached the fault from an oracle that saw the fault and stayed silent.",
+  "metrics": [
+    "per oracle, condition, map set and policy: detections, n, Wilson 95% interval, censored count, mean and median discovery step among detections only, violation kinds",
+    "per oracle and condition: totals out of 180 with a Wilson 95% interval",
+    "for goal_reward_missing under v3: exposed hunts, detected hunts and detected hunts whose discovery step equals first_success_step",
+    "for clean v3 hunts: hunts reaching the goal with the key, per policy and map set",
+    "paired v3 minus v2 comparison on each earlier defect: hunts where discovery status, step or violation kind differ"
+  ],
+  "prediction": "Written before any such run. Every v3 detection of goal_reward_missing is reward_mismatch at first_success_step. Scripted detects 45/45, from the committed 45/45 exposure probe. The other three hunters' counts are not predicted, because their exposure has never been measured. On the five earlier defects v3 rows equal v2 rows, because none of those faults changes the reward. Reported whatever happens.",
+  "acceptance_rule": {
+    "A_no_false_alarms": "v3 raises 0/180 violations on clean hunts.",
+    "B_reward_fault": "v3 detects 45/45 scripted hunts of goal_reward_missing. Across all 180 v3 hunts of that fault, every exposed hunt is detected with reward_mismatch at first_success_step, and no unexposed hunt is detected.",
+    "C_no_regression": "On each of the five earlier defects, for each paired hunt, v3 detects whenever v2 detects, at the same step or earlier. Any earlier step or changed kind is listed even when this passes.",
+    "D_controls": "v2 still detects 0/180 of goal_reward_missing, and its rows for that fault and for clean maps equal evidence/frozen_oracle_reward_results.json. Its coin_not_scored and clean rows equal the v2 rows in evidence/new_defect_results.json. v2 and v3 clean hunts agree on coverage and visit counts, showing the copied hunt loop follows the same trajectory.",
+    "overall": "PASS only if A, B, C and D all pass. The runner computes each rule and stores it."
+  },
+  "failure_handling": "A failed rule is reported as failed from this first scored run. The oracle, table, hunt, seeds and budget are not changed and rerun to make it pass; any later fix needs a new committed protocol and stays separate.",
+  "reading_rules": [
+    "This oracle was written knowing the reward fault, by the same author, so detecting it is a regression check on a known blind spot and not an independent discovery.",
+    "The maps and seeds are not fresh: the author has read earlier detection results on the same maps and seeds, and every earlier defect's behaviour.",
+    "Policy differences are descriptive; no significance test is made. Censored misses stay censored.",
+    "A hunter that never reached the goal with the key says nothing about the oracle; it is a limit of that hunter's exploration inside 1,200 steps.",
+    "Results describe one small authored game. They do not estimate how often reward faults occur or how an oracle would do on an external engine."
+  ],
+  "not_checked_by_v3": "terminated, truncated, info['success'], the observation integer, and reward modes other than sparse under a hunt",
+  "who_chose_and_what_they_had_seen": "The project's implementing agent chose every setting, reusing the maps, policies, seeds and budget of gridquest-new-defect-v1 and gridquest-frozen-oracle-reward-v1. Before writing this protocol it had read those protocols and their results, including v2's 0/180 and the 45/45 scripted exposure, plus the fault's code in envs/gridquest.py. Contract v3 had been run only on hand-written transitions and on clean default-map random play at seeds 1000-1003 (tests/test_reward_oracle.py), never in a hunt, on a held-out map or with an injected defect.",
+  "second_execution": "After the first run's output is committed as evidence/reward_oracle_results.json, a second full execution must reproduce its rows, summary and acceptance exactly; timestamps may differ.",
+  "outputs": {
+    "scratch": "runs/reward_oracle.json",
+    "committed": "evidence/reward_oracle_results.json"
+  },
+  "written_at_utc": "2026-11-06T09:14:37+00:00",
+  "frozen_inputs_sha256": {
+    "playtest/oracle.py": "d6cc56a81847d39fbc0892d741cc2862b3cc4e03b4fadf25dffc7672b72d6a5b",
+    "playtest/bug_hunt.py": "d3b83fb3e9c1367e4cb23bc9ddaf04a850fb6d9bc611809fa520960785c9e52f",
+    "playtest/reward_oracle.py": "4c12ca1a07b985d476608c824338c351a0c68081afd6a15cbf1c266e311a01ad",
+    "playtest/levels.py": "e6a1119e6c823bc8b058187a09a452c574a3f5a49d1986bf56090b905ccda715",
+    "envs/gridquest.py": "5c3665d006336096787aa77ac100a2516f25d005dadca4d2dc79ee1d01a6f585",
+    "evidence/unseen_levels_protocol.json": "7d394067e1bd02054ab8c3c0ec90e3e489ed4743864df5c988343d0b601c69ee",
+    "evidence/new_defect_protocol.json": "2d8c55a2ff218b011434d59a665f2aee941b6a4457069cccc2ced77df8e39d29",
+    "evidence/new_defect_results.json": "c111eeb0e835bce7fe0f8ae976d8f23878f2335271c4e31e7589b26b5dd0ea4e",
+    "evidence/frozen_oracle_reward_protocol.json": "f4b73f2b4da3b0643a900515e1f40d7a8f3c1bc5d697c4afda31a7ac2b91f79c",
+    "evidence/frozen_oracle_reward_results.json": "7bad99cd79f4bcf5c4f37afdb34cf5e2887d195c2ea1391ceda73b0c806485dc"
+  }
+}

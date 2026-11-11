@@ -1,0 +1,97 @@
+{
+  "name": "slicer-fresh-transfer-40960-v1",
+  "declared": "2026-11-02, before training or evaluating any model on these two new Slicer settings",
+  "scope": "Synthetic Slicer settings absent from all earlier declared setting lists; prior runs motivated the question, so the agent and primary cell are selected before seeing these results. Not a real-game or independent-defect validation.",
+  "settings": {
+    "train": {
+      "bomb_ratio": 0.2,
+      "speed": 1.0
+    },
+    "intermediate_0.3_slow_0.85": {
+      "bomb_ratio": 0.3,
+      "speed": 0.85
+    },
+    "stress_0.5_fast_1.45": {
+      "bomb_ratio": 0.5,
+      "speed": 1.45
+    }
+  },
+  "training_setting": "train",
+  "held_out": [
+    "intermediate_0.3_slow_0.85",
+    "stress_0.5_fast_1.45"
+  ],
+  "agents": [
+    "double_dqn",
+    "scratch_ppo",
+    "sb3_dqn",
+    "sb3_ppo"
+  ],
+  "training_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "checkpoints": [
+    0,
+    20480,
+    40960
+  ],
+  "eval_episodes": 30,
+  "eval_seed_base": 9100,
+  "episode_seed_rule": "episode e resets with seed (9100 + training_seed) * 100000 + e; greedy or deterministic policy",
+  "dqn_epsilon_decay_steps": 3584,
+  "sb3_dqn_exploration_fraction": 0.0875,
+  "ppo_rollout_steps": 512,
+  "sb3_hyperparameters": {
+    "sb3_dqn": {
+      "learning_rate": 0.0005,
+      "buffer_size": 10000,
+      "learning_starts": 100,
+      "batch_size": 64,
+      "train_freq": 4,
+      "gradient_steps": 1,
+      "target_update_interval": 250,
+      "exploration_initial_eps": 1.0,
+      "exploration_final_eps": 0.05,
+      "gamma": 0.99
+    },
+    "sb3_ppo": {
+      "learning_rate": 0.0003,
+      "n_steps": 128,
+      "batch_size": 128,
+      "n_epochs": 4,
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "clip_range": 0.2,
+      "ent_coef": 0.01
+    }
+  },
+  "training_jobs": "4 agents x 7 seeds x (default plus two in-setting references) = 84 new independent training jobs; no trained model weights are reused",
+  "primary_comparison": {
+    "agent": "sb3_dqn",
+    "setting": "stress_0.5_fast_1.45",
+    "metric": "mean_return",
+    "contrast": "in_setting_minus_default",
+    "decision": "loss if 2,000-resample seed-level bootstrap 95% interval is wholly above 0; gain if wholly below 0; otherwise no measurable difference. Seven seeds per group; descriptive, not equivalence."
+  },
+  "secondary_comparisons": "Report all other seven agent/setting return gaps, all eight fruit-score gaps, bomb hits, each group mean/interval and per-seed values; unadjusted intervals are descriptive. Do not tune or select after seeing the result.",
+  "anchors": "Evaluate existing random and scripted policies on each new setting on the same seven evaluation-seed blocks, 30 episodes each; context only.",
+  "reproduction_gate": "For default-trained seeds 0-4, parameter fingerprints at 20,480 and 40,960 must equal the corresponding committed matched-budget rows before any new-setting comparison is interpreted. New seeds 5-6 and in-setting jobs have no earlier checkpoint reference. Stop interpretation on a mismatch.",
+  "frozen_inputs_sha256": {
+    "agents/dqn.py": "ac68fdd0fcc9f6d31eb9d0e0d441531dcecf539623a3e937b410361502fdfd77",
+    "agents/ppo.py": "1d2f65c4851088d6e431dc66eee6bb9780f8758d4f7ef36c7c977336f6ac17f3",
+    "envs/slicer.py": "0f8f79b1dfedc332bd65c39ded383bbef56924e5710bba2f223e7654d180cff3",
+    "analysis/difficulty.py": "016d2996926296ce139aab0cbc24152518e05780aca3ed90da9c1c062994724e",
+    "analysis/sb3_reference.py": "ddf71c35107423be166a30bcb248150c884e0889076e4f8d0dd53c866daefd37",
+    "analysis/aggregate.py": "eba61637f415e3a8faec8c1326765783273d28c74d1ec8695453f37ca3fa3dc0",
+    "analysis/bomb_matched_longer.py": "9d6ad7a648d4dfcdb8a013ae13a25ac5c955b8bfc4a5521ee923805786a82360",
+    "evidence/slicer_bomb_matched_40960_protocol.json": "9c4902a67fd4b4e3594bf767f03feb950d62dc93468841096d5690c4af50f8eb",
+    "evidence/slicer_bomb_matched_40960_results.json": "2d7640e2bada6797f6aaa2579bcf607915d8f5e6564d8d571ff7fa1d5a1e20bc"
+  },
+  "written_at_utc": "2026-11-02T07:35:33+00:00"
+}

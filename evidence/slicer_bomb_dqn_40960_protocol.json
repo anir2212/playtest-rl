@@ -1,0 +1,51 @@
+{
+  "name": "slicer-bomb-dqn-40960-v1",
+  "declared": "2026-10-31 before extending the in-setting training budget",
+  "purpose": "Check whether scratch Double DQN in-setting references on three bomb-heavy Slicer settings remain cautious after twice the 20,480-step budget.",
+  "agent": "double_dqn",
+  "settings": {
+    "bombs_0.4": {
+      "bomb_ratio": 0.4,
+      "speed": 1.0
+    },
+    "bombs_0.6": {
+      "bomb_ratio": 0.6,
+      "speed": 1.0
+    },
+    "bombs_0.4_fast_1.3": {
+      "bomb_ratio": 0.4,
+      "speed": 1.3
+    }
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "steps": [
+    20480,
+    40960
+  ],
+  "dqn_epsilon_decay_steps": 3584,
+  "eval_episodes": 30,
+  "eval_seed_base": 7000,
+  "eval_policy": "greedy argmax, same as the 22 October difficulty protocol",
+  "primary_metrics": [
+    "mean bomb hits per episode",
+    "mean episode return"
+  ],
+  "secondary_metric": "mean fruit score per episode",
+  "aggregation": "Report each seed and five-seed mean with the existing seed-level 2000-resample bootstrap 95% interval. Compare the two checkpoints descriptively; no significance claim from their overlapping episodes.",
+  "acceptance": "At 20,480 steps, each seed must reproduce the committed in-setting reference score, bomb hits and return exactly. If this fails, report failure and make no 40,960-step comparison.",
+  "interpretation": "If bomb hits stay low, cautious play persists to 40,960 steps for these exact seeds and settings; if they rise, report the change. Do not call a fruit-score change a transfer improvement, and do not generalize to SB3 DQN, PPO, other settings or a new held-out test.",
+  "frozen_inputs_sha256": {
+    "agents/dqn.py": "ac68fdd0fcc9f6d31eb9d0e0d441531dcecf539623a3e937b410361502fdfd77",
+    "envs/slicer.py": "0f8f79b1dfedc332bd65c39ded383bbef56924e5710bba2f223e7654d180cff3",
+    "analysis/difficulty.py": "016d2996926296ce139aab0cbc24152518e05780aca3ed90da9c1c062994724e",
+    "evidence/slicer_difficulty_20480.json": "3c2b955c146f049ac243fc721ec63f2d4c61174756645f613657283850a8eb97",
+    "evidence/slicer_difficulty_protocol.json": "f99094922add008f3f8e230641b19709e03be72cacca7279d7a0d7dc3be22275"
+  },
+  "written_at_utc": "2026-10-31T09:19:23+00:00"
+}
