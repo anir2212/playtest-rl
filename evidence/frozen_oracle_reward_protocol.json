@@ -1,0 +1,43 @@
+{
+  "name": "gridquest-frozen-oracle-reward-v1",
+  "declared": "2026-10-31, before implementation or hunting of goal_reward_missing",
+  "oracle": "v2 check_transition, unchanged from the 23 October full-state contract",
+  "defect": "goal_reward_missing",
+  "defect_description": "On a successful key-and-goal entry under sparse reward, return 0.0 instead of the declared 1.0. Keep position, key, coin, score, termination and reported success unchanged.",
+  "design_boundary": "The frozen v2 oracle compares position, key, coin and score, not the step reward. This challenge is deliberately chosen after reading that boundary; it is not an independent unseen-defect sample.",
+  "prediction": "The unchanged v2 oracle reports no violation even when the reward fault is exposed. Report any contrary detection rather than changing the contract.",
+  "maps": "default layout plus all eight frozen gridquest-unseen-v1 layouts",
+  "policies": [
+    "random",
+    "scripted",
+    "coverage",
+    "q_count"
+  ],
+  "hunt_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "max_steps": 1200,
+  "hunt_rule": "Use the existing hunt policy and v2 oracle. Add only the new defect name to its allow-list; do not change action selection, stopping, reset or oracle logic. Run each defective and clean map/policy/seed once. A violation is detection; misses are right-censored at 1200 steps.",
+  "exposure_probe": "For each of nine maps and five seeds, separately drive a scripted key-then-goal path on the defective environment and record whether a successful goal entry returned 0.0. This probe does not feed the hunt or oracle and is not counted as a detection.",
+  "metrics": [
+    "defective detections and clean false alarms per policy on default (n=5) and held-out (n=40) maps, with Wilson 95% intervals",
+    "violation kinds, censored misses, and discovery-step mean/median only among detections",
+    "scripted exposure-probe successes out of 45 map/seed runs"
+  ],
+  "reading_rules": [
+    "A zero detection count with 45/45 scripted exposure proves this specific reward fault is outside the v2 public-state contract, not that every policy reached the fault.",
+    "Any clean false alarm is reported and invalidates a clean detection claim for that map set.",
+    "No tuning, p-value or generalization claim follows from this adversarial synthetic defect."
+  ],
+  "frozen_inputs_sha256": {
+    "playtest/oracle.py": "d6cc56a81847d39fbc0892d741cc2862b3cc4e03b4fadf25dffc7672b72d6a5b",
+    "playtest/bug_hunt.py": "e975bdd6dde1c8191f804efee01cf3ab3d9e079877ace2ba2fce9b65664c0360",
+    "evidence/unseen_levels_protocol.json": "7d394067e1bd02054ab8c3c0ec90e3e489ed4743864df5c988343d0b601c69ee",
+    "evidence/new_defect_results.json": "c111eeb0e835bce7fe0f8ae976d8f23878f2335271c4e31e7589b26b5dd0ea4e"
+  },
+  "written_at_utc": "2026-10-31T09:01:19+00:00"
+}

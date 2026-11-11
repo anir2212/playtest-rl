@@ -1,0 +1,104 @@
+{
+  "name": "slicer-bomb-matched-40960-v1",
+  "declared": "2026-11-01 before any extended default-trained or PPO/SB3 model was trained",
+  "scope": "Follow-up on three previously observed synthetic bomb-heavy settings; no fresh holdout or hyperparameter tuning.",
+  "agents": [
+    "double_dqn",
+    "scratch_ppo",
+    "sb3_dqn",
+    "sb3_ppo"
+  ],
+  "training_settings": [
+    "train",
+    "bombs_0.4",
+    "bombs_0.6",
+    "bombs_0.4_fast_1.3"
+  ],
+  "settings": {
+    "train": {
+      "bomb_ratio": 0.2,
+      "speed": 1.0
+    },
+    "bombs_0.4": {
+      "bomb_ratio": 0.4,
+      "speed": 1.0
+    },
+    "bombs_0.6": {
+      "bomb_ratio": 0.6,
+      "speed": 1.0
+    },
+    "bombs_0.4_fast_1.3": {
+      "bomb_ratio": 0.4,
+      "speed": 1.3
+    }
+  },
+  "reused_rows": "Use the 15 previously committed 40,960-step in-setting scratch DQN rows byte-identically; train 65 additional agent/setting/seed jobs.",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "checkpoints": [
+    20480,
+    40960
+  ],
+  "eval_episodes": 30,
+  "eval_seed_base": 7000,
+  "eval_policy": "greedy/argmax on the same deterministic 30 episodes per seed as the earlier difficulty evaluation",
+  "dqn_epsilon_decay_steps": 3584,
+  "sb3_dqn_exploration_fraction": 0.0875,
+  "ppo_rollout_steps": 512,
+  "sb3_hyperparameters": {
+    "sb3_dqn": {
+      "learning_rate": 0.0005,
+      "buffer_size": 10000,
+      "learning_starts": 100,
+      "batch_size": 64,
+      "train_freq": 4,
+      "gradient_steps": 1,
+      "target_update_interval": 250,
+      "exploration_initial_eps": 1.0,
+      "exploration_final_eps": 0.05,
+      "gamma": 0.99
+    },
+    "sb3_ppo": {
+      "learning_rate": 0.0003,
+      "n_steps": 128,
+      "batch_size": 128,
+      "n_epochs": 4,
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "clip_range": 0.2,
+      "ent_coef": 0.01
+    }
+  },
+  "metrics": [
+    "mean fruit score per episode",
+    "mean bomb hits per episode",
+    "mean episode return"
+  ],
+  "comparisons": "At 40,960 steps, compare each default-trained agent with its in-setting reference on each of the three settings. Report group means, seed-level bootstrap 95% intervals and in-setting-minus-default gaps for fruit and return, using the existing 2,000-resample independent-group gap_ci. Report bomb hits alongside each. All twelve agent-setting cells are reported.",
+  "reproduction_gate": "Before interpreting 40,960-step values, compare each new 20,480-step checkpoint with the corresponding committed 20,480-step row for parameter fingerprint and all three metrics. The 15 reused DQN rows must already reproduce the old evidence. If any agent/setting/seed differs, report that failure and withhold a 40,960-step comparison for the affected agent.",
+  "reading_rules": [
+    "The three settings were inspected in earlier runs; no new held-out generalization claim.",
+    "A 40,960-step gap is budget matched. Fruit-only advantage with more bomb hits must be qualified by return and bomb hits.",
+    "Five seeds and repeated evaluation episodes limit inference; confidence intervals do not prove equivalence.",
+    "No change to agents, environment, hyperparameters or policy selection after seeing results."
+  ],
+  "frozen_inputs_sha256": {
+    "agents/dqn.py": "ac68fdd0fcc9f6d31eb9d0e0d441531dcecf539623a3e937b410361502fdfd77",
+    "agents/ppo.py": "1d2f65c4851088d6e431dc66eee6bb9780f8758d4f7ef36c7c977336f6ac17f3",
+    "envs/slicer.py": "0f8f79b1dfedc332bd65c39ded383bbef56924e5710bba2f223e7654d180cff3",
+    "analysis/difficulty.py": "016d2996926296ce139aab0cbc24152518e05780aca3ed90da9c1c062994724e",
+    "analysis/sb3_reference.py": "ddf71c35107423be166a30bcb248150c884e0889076e4f8d0dd53c866daefd37",
+    "evidence/slicer_difficulty_protocol.json": "f99094922add008f3f8e230641b19709e03be72cacca7279d7a0d7dc3be22275",
+    "evidence/slicer_difficulty_20480.json": "3c2b955c146f049ac243fc721ec63f2d4c61174756645f613657283850a8eb97",
+    "evidence/sb3_reference_protocol.json": "482b199dd5a5a61b3ca401eefe82501b5a537dbdcbc2b8656f74602e636d96c8",
+    "evidence/sb3_reference_20480.json": "99867222bc61ee769a259df4bb916572c6f590323b8787dd2e13a099e1ba293b",
+    "evidence/slicer_bomb_dqn_40960_protocol.json": "db8ce4b8f6957e9ac0236a84e81d3839db8aca56117278508ed4f263e4c3d49f",
+    "evidence/slicer_bomb_dqn_40960_results.json": "8666b7181664986c6b2e62f1853f513af4215d691a3554c1732483405ca49511"
+  },
+  "written_at_utc": "2026-11-01T06:03:25+00:00"
+}

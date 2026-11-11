@@ -1,0 +1,663 @@
+{
+  "name": "gridquest-layout-transfer-v1",
+  "declared": "6 November 2026, Singapore time, before any training or scoring on these train, validation or test layouts.",
+  "question": "Can a PPO agent trained on some seeded GridQuest layouts play layouts it never saw, compared with a random policy, the shortest-path search, an agent trained on one layout, and an agent denied any view of the layout?",
+  "scope": "Clean play only: no defect is injected and no oracle or bug hunt takes part. Existing observations, environments, hunts, oracles and evidence do not change.",
+  "observation": {
+    "primary": "egocentric",
+    "egocentric": "envs/gridquest_views.py: seven 15x15 planes centred on the player (blocked including off-map, door, untaken key, goal, hazard, untaken coin, has-key). Covers the whole map at every supported size (6, 7, 8). Defect-only cells are not shown.",
+    "control": "absolute: position as one-hot columns plus key and coin flags, the same information as the integer observation. It contains nothing about the layout, so it should not generalise by construction."
+  },
+  "algorithm": "Scratch clipped PPO in agents/layout_ppo.py, reusing gae_advantages from agents/ppo.py. Egocentric network: conv 16 (3x3, stride 2), conv 32 (3x3), linear 128, actor and critic heads. Absolute network: two linear layers of 128. No new dependency.",
+  "reward_mode": "shaped",
+  "reward_note": "GridQuest's existing shaped mode: +1 at the goal with the key, -0.01 per step, +0.2 on first taking the key, -0.05 on a hazard. Reward trains the agent; it is not a metric here.",
+  "steps": 1024000,
+  "fixed_ppo": {
+    "n_envs": 16,
+    "rollout": 128,
+    "epochs": 4,
+    "minibatch": 256,
+    "clip": 0.2,
+    "lam": 0.95,
+    "gamma": 0.99
+  },
+  "search_space": {
+    "lr3e-4_ent0.01": {
+      "lr": 0.0003,
+      "ent_coef": 0.01
+    },
+    "lr3e-4_ent0.03": {
+      "lr": 0.0003,
+      "ent_coef": 0.03
+    },
+    "lr1e-3_ent0.01": {
+      "lr": 0.001,
+      "ent_coef": 0.01
+    },
+    "lr1e-3_ent0.03": {
+      "lr": 0.001,
+      "ent_coef": 0.03
+    }
+  },
+  "selection": {
+    "metric": "spl",
+    "mode": "sampled",
+    "rule": "Train each of the four settings on the 1,000-layout count with the three search seeds, score only on the 100 validation layouts, take the highest mean. A tie goes to the earlier listed setting. The one chosen setting is then used for every condition, so the 1, 10 and 100 layout runs and the absolute control get a setting chosen for 1,000 layouts. This is disclosed, not corrected."
+  },
+  "training_layout_counts": [
+    1,
+    10,
+    100,
+    1000
+  ],
+  "search_seeds": [
+    101,
+    102,
+    103
+  ],
+  "final_seeds": [
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207
+  ],
+  "conditions": [
+    {
+      "name": "egocentric_1",
+      "view": "egocentric",
+      "count": 1
+    },
+    {
+      "name": "egocentric_10",
+      "view": "egocentric",
+      "count": 10
+    },
+    {
+      "name": "egocentric_100",
+      "view": "egocentric",
+      "count": 100
+    },
+    {
+      "name": "egocentric_1000",
+      "view": "egocentric",
+      "count": 1000
+    },
+    {
+      "name": "absolute_1",
+      "view": "absolute",
+      "count": 1
+    },
+    {
+      "name": "absolute_1000",
+      "view": "absolute",
+      "count": 1000
+    }
+  ],
+  "training_blocks": "The train set is cut into blocks of 1,000 maps, one per seed slot: search seeds take slots 0-2, final seeds slots 3-9. A condition with N layouts uses the first N of its slot's block, so counts are nested within a seed and no training map is shared between seeds. The maps cycle through sizes 6, 7, 8 in draw order, so the single-layout runs cover more than one size across seeds.",
+  "layout_plan": {
+    "generator": "gridquest-transfer-v1",
+    "near_duplicate_cells": 4,
+    "smoke_seed": 777001,
+    "smoke_count": 400,
+    "sets": {
+      "train": {
+        "seed": 20261106,
+        "count": 10000
+      },
+      "validation": {
+        "seed": 20261107,
+        "count": 100
+      },
+      "test": {
+        "seed": 20261108,
+        "count": 200
+      }
+    }
+  },
+  "layout_set_sha256": {
+    "train": "683f98642829894211f766f8180d9237ea548bbd2328ed75285eb18e730c9a8c",
+    "validation": "3df83b0e5df1ea71f7c81fa5f8fe930643d0c962d7c4b6b4a539b251fb5b61cf",
+    "test": "08c6718845a99f07cfb85f7c31b50a7b54d2ed022e70a3b756673c7273207187"
+  },
+  "layout_set_stats": {
+    "train": {
+      "layouts": 10000,
+      "solvable": 10000,
+      "by_size": {
+        "6": 3334,
+        "7": 3333,
+        "8": 3333
+      },
+      "shortest_path_mean": 9.771,
+      "shortest_path_min": 2,
+      "shortest_path_max": 25
+    },
+    "validation": {
+      "layouts": 100,
+      "solvable": 100,
+      "by_size": {
+        "6": 34,
+        "7": 33,
+        "8": 33
+      },
+      "shortest_path_mean": 9.62,
+      "shortest_path_min": 3,
+      "shortest_path_max": 23
+    },
+    "test": {
+      "layouts": 200,
+      "solvable": 200,
+      "by_size": {
+        "6": 67,
+        "7": 67,
+        "8": 66
+      },
+      "shortest_path_mean": 9.51,
+      "shortest_path_min": 3,
+      "shortest_path_max": 21
+    }
+  },
+  "generation_rejections": {
+    "train": {
+      "exact": 0,
+      "near": 0,
+      "invalid": 1776,
+      "unsolvable": 0
+    },
+    "validation": {
+      "exact": 0,
+      "near": 0,
+      "invalid": 13,
+      "unsolvable": 0
+    },
+    "test": {
+      "exact": 0,
+      "near": 0,
+      "invalid": 36,
+      "unsolvable": 0
+    }
+  },
+  "near_duplicate_rule": "Two layouts of the same size are near duplicates when their labelled cells (wall, hazard, start, key, coin, door, goal) differ in at most 4 cells under any of the 8 rotations and reflections of the square. Rejection happens in draw order inside the generator, before play. The default maps, the earlier eight bug-hunt maps and the 400 smoke maps are registered first, so they can never enter a set.",
+  "disjointness": {
+    "threshold_cells": 4,
+    "pairs": {
+      "reserved:default|train": {
+        "shared_hashes": 0,
+        "min_cell_distance": 7
+      },
+      "reserved:default|validation": {
+        "shared_hashes": 0,
+        "min_cell_distance": 11
+      },
+      "reserved:default|test": {
+        "shared_hashes": 0,
+        "min_cell_distance": 11
+      },
+      "reserved:earlier_eight|train": {
+        "shared_hashes": 0,
+        "min_cell_distance": 7
+      },
+      "reserved:earlier_eight|validation": {
+        "shared_hashes": 0,
+        "min_cell_distance": 9
+      },
+      "reserved:earlier_eight|test": {
+        "shared_hashes": 0,
+        "min_cell_distance": 11
+      },
+      "reserved:smoke|train": {
+        "shared_hashes": 0,
+        "min_cell_distance": 5
+      },
+      "reserved:smoke|validation": {
+        "shared_hashes": 0,
+        "min_cell_distance": 9
+      },
+      "reserved:smoke|test": {
+        "shared_hashes": 0,
+        "min_cell_distance": 8
+      },
+      "train|validation": {
+        "shared_hashes": 0,
+        "min_cell_distance": 6
+      },
+      "train|test": {
+        "shared_hashes": 0,
+        "min_cell_distance": 7
+      },
+      "validation|test": {
+        "shared_hashes": 0,
+        "min_cell_distance": 9
+      }
+    },
+    "within": {
+      "reserved:default": {
+        "layouts": 3,
+        "distinct_hashes": 3,
+        "min_cell_distance": null
+      },
+      "reserved:earlier_eight": {
+        "layouts": 8,
+        "distinct_hashes": 8,
+        "min_cell_distance": 11
+      },
+      "reserved:smoke": {
+        "layouts": 400,
+        "distinct_hashes": 400,
+        "min_cell_distance": 7
+      },
+      "train": {
+        "layouts": 10000,
+        "distinct_hashes": 10000,
+        "min_cell_distance": 5
+      },
+      "validation": {
+        "layouts": 100,
+        "distinct_hashes": 100,
+        "min_cell_distance": 9
+      },
+      "test": {
+        "layouts": 200,
+        "distinct_hashes": 200,
+        "min_cell_distance": 9
+      }
+    },
+    "all_disjoint": true
+  },
+  "test_layout_content_sha256_16": [
+    "8c1328977ad5559e",
+    "0eb40d7116048482",
+    "828bf6af0eb47531",
+    "afebfccd74b3b099",
+    "0b10bef292f95127",
+    "f7e631a81a6c04d0",
+    "9cfb3859b5e0b7e8",
+    "c4141838b63bdfbf",
+    "b154ed99d493b97b",
+    "ac0a11dcba22d7e8",
+    "56442e232e42dec9",
+    "2fc0b802c65c2163",
+    "e10d1c29f0526341",
+    "085225aca6f41f1c",
+    "abb4eff2f501a033",
+    "9d0c81471e555e18",
+    "4284db89671fdcc8",
+    "b88894d1a64f6803",
+    "bb471584bba0dac9",
+    "db857f0dc55775fa",
+    "a7f05ebf4d399ffa",
+    "28a5aa1907b62eda",
+    "505aed13c85bcbef",
+    "2ac437dd8be48af2",
+    "72c9535e472474f5",
+    "ab7f977937d1d78f",
+    "d4f7155cc413c2bf",
+    "bec8b0a40e53c3d2",
+    "d8e4e8687d0be44f",
+    "75c9c2d5ec135d4e",
+    "7338f040985d2034",
+    "5a114b89aadbae64",
+    "505c631c0b852e95",
+    "a940b307cff65d29",
+    "61d2cc494db63209",
+    "193578dfb92feac8",
+    "e9849eb3e2c9eaed",
+    "a97794057875eb30",
+    "ecd3c2381003a0a3",
+    "6c352f7e77004ca9",
+    "b020bcb7eb280792",
+    "94f75021c466cdc6",
+    "23a4a6900572cdd9",
+    "d6e7f058b4243b3c",
+    "410b99e440a740ee",
+    "51a11fe2d14c99f7",
+    "79a816ec6e2b0535",
+    "c4d4902056e5940e",
+    "9360b7e98cc00e09",
+    "8828ff7d177cd0b6",
+    "f76cb8710ba64381",
+    "c9607096bc7c3de8",
+    "4b43ab1adafee8bf",
+    "313ec4d1238db827",
+    "dd465806cfec8da8",
+    "92afd44f16d4f177",
+    "6c718caef9e5eb05",
+    "3742e0dad743541a",
+    "32ed236c74697728",
+    "38f04d15d4a2ec85",
+    "6358b641361d7ced",
+    "a9f96109d58f5181",
+    "ae3138eca33c7660",
+    "63f785a065e9c340",
+    "c97f06f9047f78d0",
+    "75a390e0df195688",
+    "454f0fbcd2869dd9",
+    "40174fe05066b529",
+    "d97c5f2b4caf6529",
+    "ff960f5d80048687",
+    "4c4687a633b717ba",
+    "1a8abf4f1c686697",
+    "2959ed7ea565383a",
+    "ff3c4084ea8fd3c0",
+    "8af5a63f6e8e7339",
+    "3495c5d5215d0492",
+    "51f5440b99219c0f",
+    "b6bd11c99f1d111c",
+    "c5de85da70d0b763",
+    "ee57172287e2c600",
+    "73b62c20d1412fe0",
+    "3f446d7cbe754ece",
+    "e3428f021fd319fd",
+    "43e00941ddf78261",
+    "8116b530df7cbcb2",
+    "ab19a9f93e3060da",
+    "8d39b4152dc4c911",
+    "64ef2b3d9e23cd19",
+    "abb249f1d00702bc",
+    "4eb7007f3d1ed251",
+    "914d5961fdfeadfa",
+    "f80ecb9398d45e72",
+    "dd442cb5d54bb73e",
+    "ee6fcd82a8cfda11",
+    "2914cbd6067f902e",
+    "b56596fad9a7248b",
+    "7ec8f9146ee425f1",
+    "fc2fe5947ba4f4e2",
+    "ae93faae61128009",
+    "207df4e3ae4e85bd",
+    "ec164de7f9346a90",
+    "49b890ff960021a9",
+    "7ca3a26ee144a7a7",
+    "5dc5582931a48881",
+    "36b81c57cb0b09c8",
+    "7eba7efd6ee58a66",
+    "667e70b7cfef5157",
+    "5330a965cd9c8f01",
+    "daa660003a76f01c",
+    "4064ec98b130563f",
+    "4ae8175252091ebf",
+    "b5f0b5ac09ecf74f",
+    "b27235d9feeaaca7",
+    "db820d8fc7db5e51",
+    "72f0813aa2044ff8",
+    "467085ca58b812bb",
+    "774e95a7bba3fb99",
+    "82a6deb6e4fa5095",
+    "57cc71bd6c37aa9c",
+    "403103c8bb9ca452",
+    "2a3a4053a4feeaa5",
+    "6b498f12831f0c26",
+    "676fb8d5330be6c1",
+    "6273f4beae4c8f43",
+    "cbed7ce9c1af3c34",
+    "ecc453badc1e978e",
+    "750ff5323858864f",
+    "98f144799a145ec6",
+    "92b9a750cb2b39f6",
+    "d7ce7f4a6685d742",
+    "1bbbb78bfb4f241a",
+    "2250bde012a10858",
+    "72ab2ca7bc297e88",
+    "2548db1fba1facfd",
+    "476b3487cea48df7",
+    "5b0f38881d2fdae5",
+    "ccfed614fe285498",
+    "a347b843830f9eb2",
+    "eb8503b0542b90f9",
+    "8c87b4cce940eadd",
+    "b15327b1fe17c6da",
+    "da928c90a8332c26",
+    "6c42a7fa0889a4a2",
+    "213bd63730fa6974",
+    "29413bad53f9ae04",
+    "332a78da8432c9b5",
+    "b891306afebe4455",
+    "0dc000568898fd5c",
+    "7dbb2982e6d24836",
+    "3ffa57ab8280f736",
+    "737f62b5ef9cc765",
+    "672ad41a8fb0f18e",
+    "3cd4937d6077bb60",
+    "baec66f00cbafaa5",
+    "b5af44ed615e6270",
+    "3c0855ec05dc5649",
+    "9969c72694dee3c1",
+    "e22f04b644497bc8",
+    "37f109160f1fd15b",
+    "8be189736c342d24",
+    "902d5a506ae900cf",
+    "37aa2be28cc36707",
+    "2e4a71e8d55fdaa6",
+    "ad05a02596329c16",
+    "e5f6ff6608aed313",
+    "25b46441f95cc850",
+    "28badf0589bc1bdd",
+    "3b121395a4940c67",
+    "36dd7f6b945b7842",
+    "a27236a60ce567fd",
+    "c4e02d41cf94fe84",
+    "d055f915f986f279",
+    "5091ec4fd2744c61",
+    "c1524f887b9100dd",
+    "8187f4e370bb235c",
+    "b67ff11b2cddcd10",
+    "9f61e02f7277e5d1",
+    "f4b40a175d3535f9",
+    "f8de281a67cb28a7",
+    "cfd332075fe245f2",
+    "a34af56bb8fa5946",
+    "f304b6c467895a75",
+    "ca13b28b532c56f7",
+    "92bcfe99a63b9893",
+    "5323e5360bdc6855",
+    "5051891747bf8570",
+    "e5e90a0f17bba725",
+    "1b3800ac9633f98c",
+    "fb61a85a765986a9",
+    "bdef1af917f59a22",
+    "6ff5a26814de2851",
+    "cafce1f0cb1be2e2",
+    "afa9aee3932351fe",
+    "b8ef48131c23a6c9",
+    "fb0735b1191d2c47",
+    "0b4731ff87723ded",
+    "31693a45ef7993d5",
+    "65e32df08d427651",
+    "13089ac522e481cd",
+    "2760b3287181362e"
+  ],
+  "validation_layout_content_sha256_16": [
+    "caa15d861088eed5",
+    "55d32060d0ce068f",
+    "84b70ec4089f0ecb",
+    "aad8f4aa88aa2833",
+    "44acbf6d8da72691",
+    "40b92c9a8a3cf608",
+    "606fe3132c242107",
+    "4d4e78b59a0b4932",
+    "dd5f748583bfb4ba",
+    "dec4a2ff278bbb32",
+    "320616853726a12e",
+    "9de873193a0a602c",
+    "410163e394da29e3",
+    "0c15849da6c9e436",
+    "00dbd09ea1fdff44",
+    "8babd426018de51f",
+    "375f25cfc3d63270",
+    "097d6343c1a7a23a",
+    "0c1d26c5c23f5f51",
+    "e212617413b38e0f",
+    "05fc925c1c66c37c",
+    "68f6d2273064391e",
+    "7e75c0ca069177e8",
+    "edfe669970d4536f",
+    "4cfff40ab9d4570a",
+    "09678f5238438415",
+    "009e38e5eacfd532",
+    "5b3002b0393eaf6f",
+    "897803c9fe61182e",
+    "55b7a7175d304509",
+    "51be62dfc1d2825c",
+    "01babeccfcbb4553",
+    "12ddca49d996184a",
+    "dcf4597e8d724ed0",
+    "1190bf84d3e5d78e",
+    "9ce2daba3a53fe1e",
+    "6109b2ea02f15774",
+    "01b6790be7686dd8",
+    "787e07ba2572a9ca",
+    "28b01addab3227cc",
+    "89a72e9c0179a83c",
+    "4b6debe3bf233899",
+    "b052c38d9356f32b",
+    "f389b9bf7a7d9f3f",
+    "2f7f83d5fce9c866",
+    "42ae9bdd1fb04d2f",
+    "9b24d9aabfa57fa6",
+    "ca746ff9e51cb6c1",
+    "807b322778fd696c",
+    "ff9a366e00a88cac",
+    "a8f1de1808add00c",
+    "2bf0a2c145b9a877",
+    "31a282a055c03375",
+    "a96a8d618bc8a7b8",
+    "d9d072a7987f8248",
+    "3bca5cb8d0635915",
+    "d286a18acef86e6f",
+    "d492b338ca52bd4e",
+    "b0a25f978bd402b5",
+    "2d31dbb4204d56af",
+    "104db3cd07d7c7f3",
+    "0e7f2245316b635d",
+    "ca7df62cdc1823d1",
+    "8453f31fc7194489",
+    "608e4feb56b55f77",
+    "01383f2ed35489bc",
+    "5bc5afc5f0940b93",
+    "1b2604fbac3fc769",
+    "69de5220371c36bc",
+    "b6149a81a98b5bbf",
+    "36a3e0da1047789c",
+    "421a9b7d008cd287",
+    "b54109d9f6e6c652",
+    "f2def1e41662c189",
+    "2369a30590806c94",
+    "26a7f581a8260393",
+    "c52d9dd01b62a5c5",
+    "cfa9e850140309c4",
+    "abe6a9f2e305bb9b",
+    "4d91b482ef7dddce",
+    "b6b181209f86b43c",
+    "10beea51cfc24e1e",
+    "bc7a5817627e5600",
+    "3c1ffc39170eb671",
+    "2767780ac9d41525",
+    "22101d65e9da1404",
+    "c838dce9afdca86c",
+    "858ea81444bbe670",
+    "98055008ddaf15d1",
+    "89fa2b06a494d481",
+    "07a91cac26cc1675",
+    "ee12282909936708",
+    "337d1881d74e36e6",
+    "6899d5c876ee8fcd",
+    "6353776a9fa5ce12",
+    "7cfb5064c8d6f247",
+    "23837bd72583b8f3",
+    "5c84189413345f7b",
+    "c6f73a0168a2c667",
+    "d2171c72574f2fc3"
+  ],
+  "solvability": "Every candidate must pass playtest.levels.validate and have a finite envs.gridquest_views.shortest_solution, checked at generation. No layout is removed after this point, whatever any agent does on it.",
+  "secondary_set": "The earlier eight bug-hunt maps (seed 20261020), labelled earlier_eight. They have been seen and used to develop bug hunters, though never by a learning agent. Reported only as a labelled secondary set; no acceptance rule reads them.",
+  "evaluation": {
+    "episodes_per_layout": {
+      "sampled": 5,
+      "greedy": 1
+    },
+    "seed_base": 70000,
+    "sampled": "Actions drawn from the policy. This is the primary mode, declared because a memoryless greedy policy can walk in a loop on a map it does not solve. Smoke runs also scored it above greedy, which the author had seen when declaring it.",
+    "greedy": "Most likely action; deterministic, so one episode per layout. Reported beside the primary mode.",
+    "sets": "Own training layouts, validation, test, earlier_eight. Episode limit is the game's own size*size*3."
+  },
+  "metrics": {
+    "spl": "Success weighted by path length, per episode: shortest / max(taken, shortest) on success, else 0. Averaged within a layout, then across layouts and seeds.",
+    "success": "Share of episodes reaching the goal holding the key within the limit. Reported beside SPL, because a random walk succeeds often on these small maps while taking a long path.",
+    "generalisation_gap": "Mean SPL on a seed's own training layouts minus mean SPL on the test layouts, for the same agents."
+  },
+  "primary_metric": {
+    "metric": "spl",
+    "mode": "sampled"
+  },
+  "references": {
+    "random": "Uniform-random actions, 5 episodes per layout, one run for each final seed's evaluation seed.",
+    "scripted": "The existing playtest.bug_hunt._scripted_action key-then-goal search, played in the real game on each validation, test and earlier_eight layout, as the upper reference. It knows the map, so it is a ceiling and not a competitor. Expected SPL 1.0.",
+    "single_layout": "egocentric_1: trained on one layout. Its own_training score is the trained-and-tested-on-one-map overfitting reference; its test score shows what that training is worth elsewhere.",
+    "absolute_control": "absolute_1 and absolute_1000: same PPO with no view of the layout."
+  },
+  "bootstrap": {
+    "seed": 20261108,
+    "resamples": 5000,
+    "method": "95% percentile bootstrap crossed over layouts and seeds. A cell resamples seeds and layouts together. A contrast shares the layout draw between arms and draws seeds separately per arm. A gap shares the seed draw and draws each layout set separately. Seven seeds is few, so these intervals are approximate and may be somewhat narrow."
+  },
+  "primary_contrast": {
+    "agent": "egocentric_1000",
+    "statement": "Test-layout SPL (sampled) of egocentric_1000 minus the random policy.",
+    "contrasts": {
+      "agent_vs_random": [
+        "egocentric_1000",
+        "random"
+      ],
+      "agent_vs_single_layout": [
+        "egocentric_1000",
+        "egocentric_1"
+      ],
+      "agent_vs_absolute_control": [
+        "egocentric_1000",
+        "absolute_1000"
+      ],
+      "count_10_vs_1": [
+        "egocentric_10",
+        "egocentric_1"
+      ],
+      "count_100_vs_10": [
+        "egocentric_100",
+        "egocentric_10"
+      ],
+      "count_1000_vs_100": [
+        "egocentric_1000",
+        "egocentric_100"
+      ]
+    }
+  },
+  "acceptance_rule": {
+    "agent_vs_random_lower_bound_at_least": 0.5,
+    "statement": "PASS only if all hold on the 200 test layouts: (A) the 95% lower bound of agent_vs_random is at least 0.50 SPL; (B) the lower bound of agent_vs_single_layout is above 0; (C) the lower bound of agent_vs_absolute_control is above 0. Otherwise FAIL. The count steps, gaps, greedy mode, success rate and earlier_eight are descriptive and cannot change the verdict.",
+    "threshold_disclosure": "The author set the 0.50 margin after seeing smoke runs that exceeded it, so a PASS on A is expected and is a weak test. The informative numbers are the size of the score, the gap and the change with layout count."
+  },
+  "prediction": "From the smoke runs the author expects: egocentric_1 near 1.0 on its own map and at or below random on test; test SPL rising with layout count; a positive gap at 100 layouts that shrinks at 1,000; absolute_1000 close to random.",
+  "failure_handling": "If the rule fails, or the agent barely beats random, report that. Do not retune, change a setting, or rerun after seeing test scores. A follow-up needs a new protocol with new layouts. A crash before the test phase may be fixed and rerun with the same protocol only if it does not change frozen inputs, and must be recorded.",
+  "smoke_disclosure": "Before freezing, the author ran 15 PPO smoke runs and one 20k-step profile with training seeds 9001-9014 (9001 three times) on maps from generator seed 777001 (400 maps, first 300 as training pool, last 100 as evaluation). These picked the network (a stride-2 first layer for speed, after a first 41k-step run at 2k steps per second), the budget and the sampled primary mode. Observed on those maps with sampled actions: 100 layouts, 600k steps, SPL 0.76-0.82 against random 0.05 (success 0.87-0.93 against 0.37); 10 layouts, 600k steps, SPL 0.49; 1 layout, 300k steps, 1.00 on its map and 0.007 on others; 300 layouts, 205k steps, 0.65-0.85; absolute view 0.002-0.053 on others. One 600k sparse-reward run scored about the same as shaped (0.78 against 0.76), so the reward mode stayed as first picked. All 400 smoke maps are reserved and excluded from these sets. A layout-builder timing check on throwaway seeds 555001-555003 computed hashes and distances only and played nothing.",
+  "test_suite_disclosure": "The test suite plays small fixture maps from seeds 31337 and 31338, and builds but does not play maps from seeds 1, 2 and 3; none shares a content hash with a frozen set. It hashes the test layouts but never plays them. As machinery checks it runs the scripted search on 12 validation maps and a 2,048-step PPO on one search-block training map, scored on 3 validation maps; those outputs are not recorded or used for any choice.",
+  "who_chose_and_what_they_had_seen": "The project's implementing agent chose every setting, and also wrote the game and generator lineage it is testing against. It had read this repository's earlier results and code and seen the smoke runs above. It has not seen any agent or policy play the train, validation or test layouts of this protocol. Nobody independent reviewed the settings.",
+  "limits_declared_in_advance": "One small authored game. Train, validation and test come from one same-author generator, so this measures interpolation within that distribution and not transfer to another game or a differently designed level set. The egocentric view hands the agent the complete map, which a real game may not.",
+  "budget_estimate": "Measured 3.9k egocentric steps per second per worker with eight workers, so about 260 s per egocentric run, about 46 s per absolute run. 40 egocentric and 14 absolute runs on eight workers: about 25 minutes of training plus evaluation, per execution.",
+  "second_execution": "Run make gridquest-transfer a second time from the evidence commit. Rows, selection, references, summary, acceptance and disjointness must match the saved results, or the difference is reported plainly.",
+  "outputs": {
+    "results": "evidence/gridquest_transfer_results.json",
+    "rerun": "runs/gridquest_transfer.json"
+  },
+  "written_at_utc": "2026-11-06T09:51:42+00:00",
+  "frozen_inputs_sha256": {
+    "envs/gridquest.py": "5c3665d006336096787aa77ac100a2516f25d005dadca4d2dc79ee1d01a6f585",
+    "envs/gridquest_views.py": "82bbae060caebba44e19b68fd9b4d1636126027929f62d1f0345f198440e271e",
+    "agents/ppo.py": "1d2f65c4851088d6e431dc66eee6bb9780f8758d4f7ef36c7c977336f6ac17f3",
+    "agents/layout_ppo.py": "c16935418ed922065d142e4ab674f244e9a74e5d0c42171af10c9dcb00e6f51a",
+    "playtest/levels.py": "e6a1119e6c823bc8b058187a09a452c574a3f5a49d1986bf56090b905ccda715",
+    "playtest/transfer_layouts.py": "c438c4801010e77445640a5e09fab004ee9877ecb0d5da9d436b50f67531aadd",
+    "playtest/bug_hunt.py": "d3b83fb3e9c1367e4cb23bc9ddaf04a850fb6d9bc611809fa520960785c9e52f"
+  }
+}

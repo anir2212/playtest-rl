@@ -63,7 +63,7 @@ class GridQuest(gym.Env):
         if size < 6 or difficulty not in (0, 1, 2):
             raise ValueError("size >= 6 and difficulty in 0..2 required")
         if bug not in (None, "wall_gap", "score_overflow", "unreachable_checkpoint", "softlock",
-                       "coin_not_scored"):
+                       "coin_not_scored", "goal_reward_missing"):
             raise ValueError("unknown bug")
         if reward_mode not in ("sparse", "shaped", "hackable", "fixed"):
             raise ValueError("unknown reward mode")
@@ -150,6 +150,10 @@ class GridQuest(gym.Env):
             reward = (1.0 if success else -0.01) + (0.2 if self.key and not had_key else 0.0)
         if self.position in self.hazards:
             reward -= 0.05
+        if self.bug == "goal_reward_missing" and success and self.reward_mode == "sparse":
+            # Frozen-oracle challenge: public state is correct, but the returned reward is not.
+            reward = 0.0
+            bug_detected = "goal_reward_missing"
         if self.bug == "unreachable_checkpoint" and self.steps == self.max_steps and not success:
             bug_detected = "unreachable_checkpoint" if not self._reachable_goal() else None
         return self._obs(), float(reward), bool(success or bug_detected in ("wall_gap", "score_overflow")), bool(self.steps >= self.max_steps), self._info(bug_detected)

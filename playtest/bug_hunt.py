@@ -12,7 +12,7 @@ from playtest.oracle import (GameContract, GameRules, check_transition, observe_
 BUGS = ("wall_gap", "score_overflow", "unreachable_checkpoint", "softlock")
 POLICIES = ("random", "scripted", "coverage", "q_count")
 # Defects added after the frozen protocols; kept out of BUGS so earlier runs are unchanged.
-NEW_DEFECTS = ("coin_not_scored",)
+NEW_DEFECTS = ("coin_not_scored", "goal_reward_missing")
 ORACLES = ("v1", "v2")
 
 
